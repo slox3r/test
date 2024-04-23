@@ -1,0 +1,2684 @@
+
+---------------------[PARSED PYC HEADER]------------------------
+
+[+] Compiled PYC Python Version: 3.10
+
+---------------[DISASSEMBLED CODE ATTRIBUTES]-------------------
+
+[+] File Name: /usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py
+[+] Arguments: 0
+[+] Constant Strings: 
+
+                     -> 0
+                     -> None
+                     -> ('wraps',)
+                     -> ('SourceFileLoader',)
+                     -> ('session', 'g', 'request')
+                     -> ('JSONDecodeError',)
+                     -> ('HTTPException',)
+                     -> ('HashType',)
+                     -> ('UserActivity', 'CbSetting')
+                     -> ('UserManagementDao',)
+                     -> ('get_utcnow_with_tzinfo', 'authdigest')
+                     -> ('init_audit_logger', 'AuditMessage')
+                     -> ('RealmDigestDB',)
+                     -> ('db_session_context',)
+                     -> 1
+                     -> ('AuthorizationService', 'ClearActiveLoginService')
+                     -> X-Auth-Token
+                     -> X-Forwarded-For
+                     -> <code object get_forwarded_for at 0x7f360e2100e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 29>
+                     -> get_forwarded_for
+                     -> <code object AccountLockedException at 0x7f360e211f20, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 45>
+                     -> AccountLockedException
+                     -> <code object TwoFactorAuthError at 0x7f360e2119a0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 50>
+                     -> TwoFactorAuthError
+                     -> <code object XSRFTokenMissingError at 0x7f360e210b30, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 55>
+                     -> XSRFTokenMissingError
+                     -> <code object MultipleLoginException at 0x7f360e2118f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 60>
+                     -> MultipleLoginException
+                     -> <code object UserActivityAuditMessage at 0x7f360e210d40, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 66>
+                     -> UserActivityAuditMessage
+                     -> <code object UserChangeSubscriber at 0x7f360e211a50, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 77>
+                     -> UserChangeSubscriber
+                     -> <code object DigestAuthenticator at 0x7f360e2112c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 93>
+                     -> DigestAuthenticator
+                     -> <code object Pbkdf2Authenticator at 0x7f360e210190, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 171>
+                     -> Pbkdf2Authenticator
+                     -> <code object Pbkdf2Impl at 0x7f360e211420, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 211>
+                     -> Pbkdf2Impl
+                     -> <code object RequireAdminForMethods at 0x7f360e2116e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 238>
+                     -> RequireAdminForMethods
+                     -> <code object RequireAdminForCreateAndDelete at 0x7f360e211bb0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 250>
+                     -> RequireAdminForCreateAndDelete
+                     -> <code object AuthnService at 0x7f360e212ad0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 255>
+                     -> AuthnService
+
+[+] Code Object Name: <module>
+[+] Number of Local Variables: 0
+[+] Local Variables: 
+
+                     -> hashlib
+                     -> ipaddress
+                     -> logging
+                     -> os
+                     -> functools
+                     -> wraps
+                     -> importlib.machinery
+                     -> SourceFileLoader
+                     -> flask
+                     -> simplejson
+                     -> json
+                     -> session
+                     -> g
+                     -> request
+                     -> JSONDecodeError
+                     -> werkzeug.exceptions
+                     -> HTTPException
+                     -> cb.core.hash_type
+                     -> HashType
+                     -> cb.db.core_models
+                     -> UserActivity
+                     -> CbSetting
+                     -> cb.db.daos.user_management_dao
+                     -> UserManagementDao
+                     -> cb.utils
+                     -> get_utcnow_with_tzinfo
+                     -> authdigest
+                     -> cb.utils.audit
+                     -> init_audit_logger
+                     -> AuditMessage
+                     -> cb.utils.authdigest
+                     -> RealmDigestDB
+                     -> cb.utils.db
+                     -> db_session_context
+                     -> authorization_service
+                     -> AuthorizationService
+                     -> ClearActiveLoginService
+                     -> getLogger
+                     -> __name__
+                     -> _logger
+                     -> _X_AUTH_TOKEN
+                     -> _X_FORWARDED_FOR
+                     -> get_forwarded_for
+                     -> AccountLockedException
+                     -> TwoFactorAuthError
+                     -> XSRFTokenMissingError
+                     -> Exception
+                     -> MultipleLoginException
+                     -> UserActivityAuditMessage
+                     -> object
+                     -> UserChangeSubscriber
+                     -> DigestAuthenticator
+                     -> Pbkdf2Authenticator
+                     -> Pbkdf2Impl
+                     -> RequireAdminForMethods
+                     -> RequireAdminForCreateAndDelete
+                     -> AuthnService
+
+[+] Arguments & Local variable names: 
+
+                     -> [*] No Value
+
+[*] Note: Other Attributes can be added by editing the code if required
+
+-------------------[DISASSEMBLED BYTECODE]----------------------
+
+
+  1           0 LOAD_CONST               0 (0)
+              2 LOAD_CONST               1 (None)
+              4 IMPORT_NAME              0 (hashlib)
+              6 STORE_NAME               0 (hashlib)
+
+  2           8 LOAD_CONST               0 (0)
+             10 LOAD_CONST               1 (None)
+             12 IMPORT_NAME              1 (ipaddress)
+             14 STORE_NAME               1 (ipaddress)
+
+  3          16 LOAD_CONST               0 (0)
+             18 LOAD_CONST               1 (None)
+             20 IMPORT_NAME              2 (logging)
+             22 STORE_NAME               2 (logging)
+
+  4          24 LOAD_CONST               0 (0)
+             26 LOAD_CONST               1 (None)
+             28 IMPORT_NAME              3 (os)
+             30 STORE_NAME               3 (os)
+
+  5          32 LOAD_CONST               0 (0)
+             34 LOAD_CONST               2 (('wraps',))
+             36 IMPORT_NAME              4 (functools)
+             38 IMPORT_FROM              5 (wraps)
+             40 STORE_NAME               5 (wraps)
+             42 POP_TOP
+
+  6          44 LOAD_CONST               0 (0)
+             46 LOAD_CONST               3 (('SourceFileLoader',))
+             48 IMPORT_NAME              6 (importlib.machinery)
+             50 IMPORT_FROM              7 (SourceFileLoader)
+             52 STORE_NAME               7 (SourceFileLoader)
+             54 POP_TOP
+
+  8          56 LOAD_CONST               0 (0)
+             58 LOAD_CONST               1 (None)
+             60 IMPORT_NAME              8 (flask)
+             62 STORE_NAME               8 (flask)
+
+  9          64 LOAD_CONST               0 (0)
+             66 LOAD_CONST               1 (None)
+             68 IMPORT_NAME              9 (simplejson)
+             70 STORE_NAME              10 (json)
+
+ 10          72 LOAD_CONST               0 (0)
+             74 LOAD_CONST               4 (('session', 'g', 'request'))
+             76 IMPORT_NAME              8 (flask)
+             78 IMPORT_FROM             11 (session)
+             80 STORE_NAME              11 (session)
+             82 IMPORT_FROM             12 (g)
+             84 STORE_NAME              12 (g)
+             86 IMPORT_FROM             13 (request)
+             88 STORE_NAME              13 (request)
+             90 POP_TOP
+
+ 11          92 LOAD_CONST               0 (0)
+             94 LOAD_CONST               5 (('JSONDecodeError',))
+             96 IMPORT_NAME              9 (simplejson)
+             98 IMPORT_FROM             14 (JSONDecodeError)
+            100 STORE_NAME              14 (JSONDecodeError)
+            102 POP_TOP
+
+ 12         104 LOAD_CONST               0 (0)
+            106 LOAD_CONST               6 (('HTTPException',))
+            108 IMPORT_NAME             15 (werkzeug.exceptions)
+            110 IMPORT_FROM             16 (HTTPException)
+            112 STORE_NAME              16 (HTTPException)
+            114 POP_TOP
+
+ 14         116 LOAD_CONST               0 (0)
+            118 LOAD_CONST               7 (('HashType',))
+            120 IMPORT_NAME             17 (cb.core.hash_type)
+            122 IMPORT_FROM             18 (HashType)
+            124 STORE_NAME              18 (HashType)
+            126 POP_TOP
+
+ 15         128 LOAD_CONST               0 (0)
+            130 LOAD_CONST               8 (('UserActivity', 'CbSetting'))
+            132 IMPORT_NAME             19 (cb.db.core_models)
+            134 IMPORT_FROM             20 (UserActivity)
+            136 STORE_NAME              20 (UserActivity)
+            138 IMPORT_FROM             21 (CbSetting)
+            140 STORE_NAME              21 (CbSetting)
+            142 POP_TOP
+
+ 16         144 LOAD_CONST               0 (0)
+            146 LOAD_CONST               9 (('UserManagementDao',))
+            148 IMPORT_NAME             22 (cb.db.daos.user_management_dao)
+            150 IMPORT_FROM             23 (UserManagementDao)
+            152 STORE_NAME              23 (UserManagementDao)
+            154 POP_TOP
+
+ 17         156 LOAD_CONST               0 (0)
+            158 LOAD_CONST              10 (('get_utcnow_with_tzinfo', 'authdigest'))
+            160 IMPORT_NAME             24 (cb.utils)
+            162 IMPORT_FROM             25 (get_utcnow_with_tzinfo)
+            164 STORE_NAME              25 (get_utcnow_with_tzinfo)
+            166 IMPORT_FROM             26 (authdigest)
+            168 STORE_NAME              26 (authdigest)
+            170 POP_TOP
+
+ 18         172 LOAD_CONST               0 (0)
+            174 LOAD_CONST              11 (('init_audit_logger', 'AuditMessage'))
+            176 IMPORT_NAME             27 (cb.utils.audit)
+            178 IMPORT_FROM             28 (init_audit_logger)
+            180 STORE_NAME              28 (init_audit_logger)
+            182 IMPORT_FROM             29 (AuditMessage)
+            184 STORE_NAME              29 (AuditMessage)
+            186 POP_TOP
+
+ 19         188 LOAD_CONST               0 (0)
+            190 LOAD_CONST              12 (('RealmDigestDB',))
+            192 IMPORT_NAME             30 (cb.utils.authdigest)
+            194 IMPORT_FROM             31 (RealmDigestDB)
+            196 STORE_NAME              31 (RealmDigestDB)
+            198 POP_TOP
+
+ 20         200 LOAD_CONST               0 (0)
+            202 LOAD_CONST              13 (('db_session_context',))
+            204 IMPORT_NAME             32 (cb.utils.db)
+            206 IMPORT_FROM             33 (db_session_context)
+            208 STORE_NAME              33 (db_session_context)
+            210 POP_TOP
+
+ 21         212 LOAD_CONST              14 (1)
+            214 LOAD_CONST              15 (('AuthorizationService', 'ClearActiveLoginService'))
+            216 IMPORT_NAME             34 (authorization_service)
+            218 IMPORT_FROM             35 (AuthorizationService)
+            220 STORE_NAME              35 (AuthorizationService)
+            222 IMPORT_FROM             36 (ClearActiveLoginService)
+            224 STORE_NAME              36 (ClearActiveLoginService)
+            226 POP_TOP
+
+ 23         228 LOAD_NAME                2 (logging)
+            230 LOAD_METHOD             37 (getLogger)
+            232 LOAD_NAME               38 (__name__)
+            234 CALL_METHOD              1
+            236 STORE_NAME              39 (_logger)
+
+ 25         238 LOAD_CONST              16 ('X-Auth-Token')
+            240 STORE_NAME              40 (_X_AUTH_TOKEN)
+
+ 26         242 LOAD_CONST              17 ('X-Forwarded-For')
+            244 STORE_NAME              41 (_X_FORWARDED_FOR)
+
+ 29         246 LOAD_CONST              18 (<code object get_forwarded_for at 0x7f360e2100e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 29>)
+            248 LOAD_CONST              19 ('get_forwarded_for')
+            250 MAKE_FUNCTION            0
+            252 STORE_NAME              42 (get_forwarded_for)
+
+ 45         254 LOAD_BUILD_CLASS
+            256 LOAD_CONST              20 (<code object AccountLockedException at 0x7f360e211f20, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 45>)
+            258 LOAD_CONST              21 ('AccountLockedException')
+            260 MAKE_FUNCTION            0
+            262 LOAD_CONST              21 ('AccountLockedException')
+            264 LOAD_NAME               16 (HTTPException)
+            266 CALL_FUNCTION            3
+            268 STORE_NAME              43 (AccountLockedException)
+
+ 50         270 LOAD_BUILD_CLASS
+            272 LOAD_CONST              22 (<code object TwoFactorAuthError at 0x7f360e2119a0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 50>)
+            274 LOAD_CONST              23 ('TwoFactorAuthError')
+            276 MAKE_FUNCTION            0
+            278 LOAD_CONST              23 ('TwoFactorAuthError')
+            280 LOAD_NAME               16 (HTTPException)
+            282 CALL_FUNCTION            3
+            284 STORE_NAME              44 (TwoFactorAuthError)
+
+ 55         286 LOAD_BUILD_CLASS
+            288 LOAD_CONST              24 (<code object XSRFTokenMissingError at 0x7f360e210b30, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 55>)
+            290 LOAD_CONST              25 ('XSRFTokenMissingError')
+            292 MAKE_FUNCTION            0
+            294 LOAD_CONST              25 ('XSRFTokenMissingError')
+            296 LOAD_NAME               16 (HTTPException)
+            298 CALL_FUNCTION            3
+            300 STORE_NAME              45 (XSRFTokenMissingError)
+
+ 60         302 LOAD_BUILD_CLASS
+            304 LOAD_CONST              26 (<code object MultipleLoginException at 0x7f360e2118f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 60>)
+            306 LOAD_CONST              27 ('MultipleLoginException')
+            308 MAKE_FUNCTION            0
+            310 LOAD_CONST              27 ('MultipleLoginException')
+            312 LOAD_NAME               46 (Exception)
+            314 CALL_FUNCTION            3
+            316 STORE_NAME              47 (MultipleLoginException)
+
+ 66         318 LOAD_BUILD_CLASS
+            320 LOAD_CONST              28 (<code object UserActivityAuditMessage at 0x7f360e210d40, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 66>)
+            322 LOAD_CONST              29 ('UserActivityAuditMessage')
+            324 MAKE_FUNCTION            0
+            326 LOAD_CONST              29 ('UserActivityAuditMessage')
+            328 LOAD_NAME               29 (AuditMessage)
+            330 CALL_FUNCTION            3
+            332 STORE_NAME              48 (UserActivityAuditMessage)
+
+ 77         334 LOAD_BUILD_CLASS
+            336 LOAD_CONST              30 (<code object UserChangeSubscriber at 0x7f360e211a50, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 77>)
+            338 LOAD_CONST              31 ('UserChangeSubscriber')
+            340 MAKE_FUNCTION            0
+            342 LOAD_CONST              31 ('UserChangeSubscriber')
+            344 LOAD_NAME               49 (object)
+            346 CALL_FUNCTION            3
+            348 STORE_NAME              50 (UserChangeSubscriber)
+
+ 93         350 LOAD_BUILD_CLASS
+            352 LOAD_CONST              32 (<code object DigestAuthenticator at 0x7f360e2112c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 93>)
+            354 LOAD_CONST              33 ('DigestAuthenticator')
+            356 MAKE_FUNCTION            0
+            358 LOAD_CONST              33 ('DigestAuthenticator')
+            360 LOAD_NAME               31 (RealmDigestDB)
+            362 LOAD_NAME               50 (UserChangeSubscriber)
+            364 CALL_FUNCTION            4
+            366 STORE_NAME              51 (DigestAuthenticator)
+
+171         368 LOAD_BUILD_CLASS
+            370 LOAD_CONST              34 (<code object Pbkdf2Authenticator at 0x7f360e210190, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 171>)
+            372 LOAD_CONST              35 ('Pbkdf2Authenticator')
+            374 MAKE_FUNCTION            0
+            376 LOAD_CONST              35 ('Pbkdf2Authenticator')
+            378 LOAD_NAME               50 (UserChangeSubscriber)
+            380 CALL_FUNCTION            3
+            382 STORE_NAME              52 (Pbkdf2Authenticator)
+
+211         384 LOAD_BUILD_CLASS
+            386 LOAD_CONST              36 (<code object Pbkdf2Impl at 0x7f360e211420, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 211>)
+            388 LOAD_CONST              37 ('Pbkdf2Impl')
+            390 MAKE_FUNCTION            0
+            392 LOAD_CONST              37 ('Pbkdf2Impl')
+            394 LOAD_NAME               49 (object)
+            396 CALL_FUNCTION            3
+            398 STORE_NAME              53 (Pbkdf2Impl)
+
+238         400 LOAD_BUILD_CLASS
+            402 LOAD_CONST              38 (<code object RequireAdminForMethods at 0x7f360e2116e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 238>)
+            404 LOAD_CONST              39 ('RequireAdminForMethods')
+            406 MAKE_FUNCTION            0
+            408 LOAD_CONST              39 ('RequireAdminForMethods')
+            410 LOAD_NAME               49 (object)
+            412 CALL_FUNCTION            3
+            414 STORE_NAME              54 (RequireAdminForMethods)
+
+250         416 LOAD_BUILD_CLASS
+            418 LOAD_CONST              40 (<code object RequireAdminForCreateAndDelete at 0x7f360e211bb0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 250>)
+            420 LOAD_CONST              41 ('RequireAdminForCreateAndDelete')
+            422 MAKE_FUNCTION            0
+            424 LOAD_CONST              41 ('RequireAdminForCreateAndDelete')
+            426 LOAD_NAME               54 (RequireAdminForMethods)
+            428 CALL_FUNCTION            3
+            430 STORE_NAME              55 (RequireAdminForCreateAndDelete)
+
+255         432 LOAD_BUILD_CLASS
+            434 LOAD_CONST              42 (<code object AuthnService at 0x7f360e212ad0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 255>)
+            436 LOAD_CONST              43 ('AuthnService')
+            438 MAKE_FUNCTION            0
+            440 LOAD_CONST              43 ('AuthnService')
+            442 LOAD_NAME               50 (UserChangeSubscriber)
+            444 CALL_FUNCTION            3
+            446 STORE_NAME              56 (AuthnService)
+            448 LOAD_CONST               1 (None)
+            450 RETURN_VALUE
+
+Disassembly of <code object get_forwarded_for at 0x7f360e2100e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 29>:
+ 30           0 LOAD_GLOBAL              0 (request)
+              2 LOAD_ATTR                1 (headers)
+              4 LOAD_METHOD              2 (getlist)
+              6 LOAD_GLOBAL              3 (_X_FORWARDED_FOR)
+              8 LOAD_CONST               0 (None)
+             10 CALL_METHOD              2
+             12 STORE_FAST               0 (fwds)
+
+ 31          14 LOAD_GLOBAL              4 (_logger)
+             16 LOAD_METHOD              5 (debug)
+             18 LOAD_CONST               1 ('X-Forwarded-For: {}')
+             20 LOAD_METHOD              6 (format)
+             22 LOAD_GLOBAL              7 (str)
+             24 LOAD_FAST                0 (fwds)
+             26 CALL_FUNCTION            1
+             28 CALL_METHOD              1
+             30 CALL_METHOD              1
+             32 POP_TOP
+
+ 32          34 LOAD_FAST                0 (fwds)
+             36 POP_JUMP_IF_FALSE       77 (to 154)
+             38 LOAD_GLOBAL              8 (isinstance)
+             40 LOAD_FAST                0 (fwds)
+             42 LOAD_GLOBAL              9 (list)
+             44 CALL_FUNCTION            2
+             46 POP_JUMP_IF_FALSE       77 (to 154)
+
+ 33          48 LOAD_FAST                0 (fwds)
+             50 LOAD_CONST               2 (-1)
+             52 BINARY_SUBSCR
+             54 STORE_FAST               1 (tmp)
+
+ 34          56 LOAD_CONST               3 (',')
+             58 LOAD_FAST                1 (tmp)
+             60 CONTAINS_OP              0
+             62 POP_JUMP_IF_FALSE       39 (to 78)
+
+ 35          64 LOAD_FAST                1 (tmp)
+             66 LOAD_METHOD             10 (split)
+             68 LOAD_CONST               3 (',')
+             70 CALL_METHOD              1
+             72 LOAD_CONST               2 (-1)
+             74 BINARY_SUBSCR
+             76 STORE_FAST               1 (tmp)
+
+ 36     >>   78 LOAD_FAST                1 (tmp)
+             80 LOAD_METHOD             11 (strip)
+             82 CALL_METHOD              0
+             84 STORE_FAST               2 (ip)
+
+ 37          86 SETUP_FINALLY           15 (to 118)
+
+ 38          88 LOAD_FAST                2 (ip)
+             90 LOAD_CONST               4 ('localhost')
+             92 COMPARE_OP               2 (==)
+             94 POP_JUMP_IF_TRUE        53 (to 106)
+             96 LOAD_GLOBAL             12 (ipaddress)
+             98 LOAD_METHOD             13 (ip_address)
+            100 LOAD_FAST                2 (ip)
+            102 CALL_METHOD              1
+            104 POP_JUMP_IF_FALSE       56 (to 112)
+
+ 39     >>  106 LOAD_FAST                2 (ip)
+            108 POP_BLOCK
+            110 RETURN_VALUE
+
+ 38     >>  112 POP_BLOCK
+
+ 42         114 LOAD_CONST               6 ('')
+            116 RETURN_VALUE
+
+ 40     >>  118 DUP_TOP
+            120 LOAD_GLOBAL             14 (ValueError)
+            122 JUMP_IF_NOT_EXC_MATCH    76 (to 152)
+            124 POP_TOP
+            126 POP_TOP
+            128 POP_TOP
+
+ 41         130 LOAD_GLOBAL              4 (_logger)
+            132 LOAD_METHOD              5 (debug)
+            134 LOAD_CONST               5 ('Invalid IP address in last position of X_FORWARDED_FOR list: {}')
+            136 LOAD_METHOD              6 (format)
+            138 LOAD_FAST                2 (ip)
+            140 CALL_METHOD              1
+            142 CALL_METHOD              1
+            144 POP_TOP
+            146 POP_EXCEPT
+
+ 42         148 LOAD_CONST               6 ('')
+            150 RETURN_VALUE
+
+ 40     >>  152 RERAISE                  0
+
+ 42     >>  154 LOAD_CONST               6 ('')
+            156 RETURN_VALUE
+
+Disassembly of <code object AccountLockedException at 0x7f360e211f20, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 45>:
+ 45           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('AccountLockedException')
+              6 STORE_NAME               2 (__qualname__)
+
+ 46           8 LOAD_CONST               1 (423)
+             10 STORE_NAME               3 (code)
+
+ 47          12 LOAD_CONST               2 ('User account is locked')
+             14 STORE_NAME               4 (description)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object TwoFactorAuthError at 0x7f360e2119a0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 50>:
+ 50           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('TwoFactorAuthError')
+              6 STORE_NAME               2 (__qualname__)
+
+ 51           8 LOAD_CONST               1 (405)
+             10 STORE_NAME               3 (code)
+
+ 52          12 LOAD_CONST               2 ('Failed Secondary Authentication Checks')
+             14 STORE_NAME               4 (description)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object XSRFTokenMissingError at 0x7f360e210b30, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 55>:
+ 55           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('XSRFTokenMissingError')
+              6 STORE_NAME               2 (__qualname__)
+
+ 56           8 LOAD_CONST               1 (403)
+             10 STORE_NAME               3 (code)
+
+ 57          12 LOAD_CONST               2 ('XSRF token could not be found')
+             14 STORE_NAME               4 (description)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object MultipleLoginException at 0x7f360e2118f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 60>:
+ 60           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('MultipleLoginException')
+              6 STORE_NAME               2 (__qualname__)
+
+ 61           8 LOAD_CONST               1 (<code object __init__ at 0x7f360e2107c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 61>)
+             10 LOAD_CONST               2 ('MultipleLoginException.__init__')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               3 (__init__)
+             16 LOAD_CONST               3 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e2107c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 61>:
+ 62           0 LOAD_CONST               1 (403)
+              2 LOAD_FAST                0 (self)
+              4 STORE_ATTR               0 (http_code)
+
+ 63           6 LOAD_FAST                1 (message)
+              8 LOAD_FAST                0 (self)
+             10 STORE_ATTR               1 (message)
+             12 LOAD_CONST               0 (None)
+             14 RETURN_VALUE
+
+Disassembly of <code object UserActivityAuditMessage at 0x7f360e210d40, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 66>:
+ 66           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('UserActivityAuditMessage')
+              6 STORE_NAME               2 (__qualname__)
+
+ 67           8 LOAD_CONST               6 ((None,))
+             10 LOAD_CLOSURE             0 (__class__)
+             12 BUILD_TUPLE              1
+             14 LOAD_CONST               2 (<code object __init__ at 0x7f360e2102f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 67>)
+             16 LOAD_CONST               3 ('UserActivityAuditMessage.__init__')
+             18 MAKE_FUNCTION            9 (defaults, closure)
+             20 STORE_NAME               3 (__init__)
+
+ 73          22 LOAD_CONST               4 (<code object __str__ at 0x7f360e212e40, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 73>)
+             24 LOAD_CONST               5 ('UserActivityAuditMessage.__str__')
+             26 MAKE_FUNCTION            0
+             28 STORE_NAME               4 (__str__)
+             30 LOAD_CLOSURE             0 (__class__)
+             32 DUP_TOP
+             34 STORE_NAME               5 (__classcell__)
+             36 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e2102f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 67>:
+ 68           0 LOAD_CONST               1 ("username='%s' userid='%s' ip='%s' status='%s' method='%s' path='%s'%s")
+
+ 69           2 LOAD_FAST                1 (username)
+              4 LOAD_FAST                2 (userid)
+              6 LOAD_FAST                3 (ip)
+              8 LOAD_FAST                4 (status)
+             10 LOAD_FAST                5 (method)
+             12 LOAD_FAST                6 (path)
+
+ 70          14 LOAD_FAST                7 (content)
+             16 LOAD_CONST               0 (None)
+             18 IS_OP                    1
+             20 POP_JUMP_IF_FALSE       15 (to 30)
+             22 LOAD_CONST               2 (" content='%s'")
+             24 LOAD_FAST                7 (content)
+             26 BINARY_MODULO
+             28 JUMP_FORWARD             1 (to 32)
+        >>   30 LOAD_CONST               3 ('')
+
+ 69     >>   32 BUILD_TUPLE              7
+
+ 68          34 BINARY_MODULO
+             36 STORE_FAST               8 (message)
+
+ 71          38 LOAD_GLOBAL              0 (super)
+             40 LOAD_GLOBAL              1 (UserActivityAuditMessage)
+             42 LOAD_FAST                0 (self)
+             44 CALL_FUNCTION            2
+             46 LOAD_METHOD              2 (__init__)
+             48 LOAD_CONST               0 (None)
+             50 LOAD_CONST               0 (None)
+             52 LOAD_FAST                8 (message)
+             54 CALL_METHOD              3
+             56 POP_TOP
+             58 LOAD_CONST               0 (None)
+             60 RETURN_VALUE
+
+Disassembly of <code object __str__ at 0x7f360e212e40, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 73>:
+ 74           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (message)
+              4 RETURN_VALUE
+
+Disassembly of <code object UserChangeSubscriber at 0x7f360e211a50, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 77>:
+ 77           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('UserChangeSubscriber')
+              6 STORE_NAME               2 (__qualname__)
+
+ 78           8 LOAD_CONST               1 ('\n    Any class inheriting UserChangeSubscriber should be given the opportunity to handle user events in order to\n    implement password storage requirements or password scheme migrations.\n    ')
+             10 STORE_NAME               3 (__doc__)
+
+ 83          12 LOAD_CONST               2 (<code object handle_add_user at 0x7f360e210f50, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 83>)
+             14 LOAD_CONST               3 ('UserChangeSubscriber.handle_add_user')
+             16 MAKE_FUNCTION            0
+             18 STORE_NAME               4 (handle_add_user)
+
+ 86          20 LOAD_CONST               4 (<code object handle_update_user at 0x7f360e2105b0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 86>)
+             22 LOAD_CONST               5 ('UserChangeSubscriber.handle_update_user')
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (handle_update_user)
+
+ 89          28 LOAD_CONST               6 (<code object handle_del_user at 0x7f360e212ef0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 89>)
+             30 LOAD_CONST               7 ('UserChangeSubscriber.handle_del_user')
+             32 MAKE_FUNCTION            0
+             34 STORE_NAME               6 (handle_del_user)
+             36 LOAD_CONST               8 (None)
+             38 RETURN_VALUE
+
+Disassembly of <code object handle_add_user at 0x7f360e210f50, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 83>:
+ 84           0 LOAD_GLOBAL              0 (NotImplementedError)
+              2 RAISE_VARARGS            1
+
+Disassembly of <code object handle_update_user at 0x7f360e2105b0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 86>:
+ 87           0 LOAD_GLOBAL              0 (NotImplementedError)
+              2 RAISE_VARARGS            1
+
+Disassembly of <code object handle_del_user at 0x7f360e212ef0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 89>:
+ 90           0 LOAD_GLOBAL              0 (NotImplementedError)
+              2 RAISE_VARARGS            1
+
+Disassembly of <code object DigestAuthenticator at 0x7f360e2112c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 93>:
+ 93           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('DigestAuthenticator')
+              6 STORE_NAME               2 (__qualname__)
+
+ 94           8 LOAD_CONST               1 ('\n    This class contains all the HTTP Digest Access Authentication related code extracted from the old\n    CbFlaskRealmDigestDB god class. This code will be deleted in the short term after all users have been migrated to\n    the new storage scheme.\n    ')
+             10 STORE_NAME               3 (__doc__)
+
+100          12 LOAD_CONST              23 (('md5',))
+             14 LOAD_CLOSURE             0 (__class__)
+             16 BUILD_TUPLE              1
+             18 LOAD_CONST               3 (<code object __init__ at 0x7f360e213310, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 100>)
+             20 LOAD_CONST               4 ('DigestAuthenticator.__init__')
+             22 MAKE_FUNCTION            9 (defaults, closure)
+             24 STORE_NAME               4 (__init__)
+
+110          26 LOAD_CONST               5 (<code object handle_add_user at 0x7f360e210500, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 110>)
+             28 LOAD_CONST               6 ('DigestAuthenticator.handle_add_user')
+             30 MAKE_FUNCTION            0
+             32 STORE_NAME               5 (handle_add_user)
+
+114          34 LOAD_CONST               7 (<code object handle_update_user at 0x7f360e210240, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 114>)
+             36 LOAD_CONST               8 ('DigestAuthenticator.handle_update_user')
+             38 MAKE_FUNCTION            0
+             40 STORE_NAME               6 (handle_update_user)
+
+118          42 LOAD_CONST               9 (<code object handle_del_user at 0x7f360e210030, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 118>)
+             44 LOAD_CONST              10 ('DigestAuthenticator.handle_del_user')
+             46 MAKE_FUNCTION            0
+             48 STORE_NAME               7 (handle_del_user)
+
+122          50 LOAD_CONST              11 (<code object is_authenticated at 0x7f360e210be0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 122>)
+             52 LOAD_CONST              12 ('DigestAuthenticator.is_authenticated')
+             54 MAKE_FUNCTION            0
+             56 STORE_NAME               8 (is_authenticated)
+
+138          58 LOAD_CLOSURE             0 (__class__)
+             60 BUILD_TUPLE              1
+             62 LOAD_CONST              13 (<code object add_user at 0x7f360e210660, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 138>)
+             64 LOAD_CONST              14 ('DigestAuthenticator.add_user')
+             66 MAKE_FUNCTION            8 (closure)
+             68 STORE_NAME               9 (add_user)
+
+142          70 LOAD_CLOSURE             0 (__class__)
+             72 BUILD_TUPLE              1
+             74 LOAD_CONST              15 (<code object update_user at 0x7f360e211d10, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 142>)
+             76 LOAD_CONST              16 ('DigestAuthenticator.update_user')
+             78 MAKE_FUNCTION            8 (closure)
+             80 STORE_NAME              10 (update_user)
+
+151          82 LOAD_CLOSURE             0 (__class__)
+             84 BUILD_TUPLE              1
+             86 LOAD_CONST              17 (<code object del_user at 0x7f360e211e70, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 151>)
+             88 LOAD_CONST              18 ('DigestAuthenticator.del_user')
+             90 MAKE_FUNCTION            8 (closure)
+             92 STORE_NAME              11 (del_user)
+
+158          94 LOAD_CONST              19 (<code object _inject_user at 0x7f360e210710, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 158>)
+             96 LOAD_CONST              20 ('DigestAuthenticator._inject_user')
+             98 MAKE_FUNCTION            0
+            100 STORE_NAME              12 (_inject_user)
+
+161         102 LOAD_CONST              21 (<code object _load_users at 0x7f360e210c90, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 161>)
+            104 LOAD_CONST              22 ('DigestAuthenticator._load_users')
+            106 MAKE_FUNCTION            0
+            108 STORE_NAME              13 (_load_users)
+            110 LOAD_CLOSURE             0 (__class__)
+            112 DUP_TOP
+            114 STORE_NAME              14 (__classcell__)
+            116 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e213310, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 100>:
+101           0 LOAD_GLOBAL              0 (super)
+              2 LOAD_GLOBAL              1 (DigestAuthenticator)
+              4 LOAD_FAST                0 (self)
+              6 CALL_FUNCTION            2
+              8 LOAD_METHOD              2 (__init__)
+             10 LOAD_FAST                3 (database_name)
+             12 LOAD_FAST                4 (algorithm)
+             14 CALL_METHOD              2
+             16 POP_TOP
+
+103          18 BUILD_LIST               0
+             20 LOAD_FAST                0 (self)
+             22 STORE_ATTR               3 (_users)
+
+104          24 LOAD_FAST                2 (users_dao)
+             26 LOAD_FAST                0 (self)
+             28 STORE_ATTR               4 (_users_dao)
+
+105          30 LOAD_FAST                1 (config)
+             32 LOAD_FAST                0 (self)
+             34 STORE_ATTR               5 (_config)
+
+107          36 LOAD_GLOBAL              6 (db_session_context)
+             38 LOAD_FAST                1 (config)
+             40 CALL_FUNCTION            1
+             42 SETUP_WITH              13 (to 70)
+             44 POP_TOP
+
+108          46 LOAD_FAST                0 (self)
+             48 LOAD_METHOD              7 (_load_users)
+             50 CALL_METHOD              0
+             52 POP_TOP
+             54 POP_BLOCK
+
+107          56 LOAD_CONST               0 (None)
+             58 DUP_TOP
+             60 DUP_TOP
+             62 CALL_FUNCTION            3
+             64 POP_TOP
+             66 LOAD_CONST               0 (None)
+             68 RETURN_VALUE
+        >>   70 WITH_EXCEPT_START
+             72 POP_JUMP_IF_TRUE        38 (to 76)
+             74 RERAISE                  1
+        >>   76 POP_TOP
+             78 POP_TOP
+             80 POP_TOP
+             82 POP_EXCEPT
+             84 POP_TOP
+             86 LOAD_CONST               0 (None)
+             88 RETURN_VALUE
+
+Disassembly of <code object handle_add_user at 0x7f360e210500, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 110>:
+112           0 LOAD_CONST               1 (None)
+              2 RETURN_VALUE
+
+Disassembly of <code object handle_update_user at 0x7f360e210240, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 114>:
+116           0 LOAD_CONST               1 (None)
+              2 RETURN_VALUE
+
+Disassembly of <code object handle_del_user at 0x7f360e210030, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 118>:
+119           0 LOAD_FAST                0 (self)
+              2 LOAD_METHOD              0 (del_user)
+              4 LOAD_FAST                1 (user)
+              6 LOAD_ATTR                1 (username)
+              8 CALL_METHOD              1
+             10 RETURN_VALUE
+
+Disassembly of <code object is_authenticated at 0x7f360e210be0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 122>:
+123           0 LOAD_CONST               0 (None)
+              2 STORE_FAST               2 (user)
+
+129           4 LOAD_FAST                1 (req)
+              6 LOAD_ATTR                0 (authorization)
+              8 LOAD_CONST               0 (None)
+             10 IS_OP                    1
+             12 POP_JUMP_IF_FALSE       24 (to 48)
+
+130          14 LOAD_FAST                1 (req)
+             16 LOAD_ATTR                0 (authorization)
+             18 LOAD_ATTR                1 (username)
+             20 STORE_FAST               3 (username)
+
+131          22 LOAD_FAST                0 (self)
+             24 LOAD_ATTR                2 (_users_dao)
+             26 LOAD_METHOD              3 (get_user)
+             28 LOAD_FAST                3 (username)
+             30 CALL_METHOD              1
+             32 STORE_FAST               2 (user)
+
+132          34 LOAD_FAST                2 (user)
+             36 POP_JUMP_IF_FALSE       24 (to 48)
+
+133          38 LOAD_FAST                0 (self)
+             40 LOAD_METHOD              4 (_inject_user)
+             42 LOAD_FAST                2 (user)
+             44 CALL_METHOD              1
+             46 POP_TOP
+
+135     >>   48 LOAD_GLOBAL              5 (authdigest)
+             50 LOAD_ATTR                6 (RealmDigestDB)
+             52 LOAD_METHOD              7 (is_authenticated)
+             54 LOAD_FAST                0 (self)
+             56 LOAD_FAST                1 (req)
+             58 CALL_METHOD              2
+             60 STORE_FAST               4 (result)
+
+136          62 LOAD_FAST                4 (result)
+             64 RETURN_VALUE
+
+Disassembly of <code object add_user at 0x7f360e210660, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 138>:
+140           0 LOAD_GLOBAL              0 (super)
+              2 LOAD_GLOBAL              1 (DigestAuthenticator)
+              4 LOAD_FAST                0 (self)
+              6 CALL_FUNCTION            2
+              8 LOAD_METHOD              2 (add_user)
+             10 LOAD_FAST                1 (username)
+             12 LOAD_FAST                2 (password)
+             14 CALL_METHOD              2
+             16 RETURN_VALUE
+
+Disassembly of <code object update_user at 0x7f360e211d10, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 142>:
+145           0 LOAD_FAST                1 (username)
+              2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (db)
+              6 CONTAINS_OP              0
+              8 POP_JUMP_IF_FALSE       13 (to 26)
+
+146          10 LOAD_GLOBAL              1 (super)
+             12 LOAD_GLOBAL              2 (DigestAuthenticator)
+             14 LOAD_FAST                0 (self)
+             16 CALL_FUNCTION            2
+             18 LOAD_METHOD              3 (del_user)
+             20 LOAD_FAST                1 (username)
+             22 CALL_METHOD              1
+             24 POP_TOP
+
+147     >>   26 LOAD_GLOBAL              1 (super)
+             28 LOAD_GLOBAL              2 (DigestAuthenticator)
+             30 LOAD_FAST                0 (self)
+             32 CALL_FUNCTION            2
+             34 LOAD_METHOD              4 (add_user)
+             36 LOAD_FAST                1 (username)
+             38 LOAD_FAST                2 (password)
+             40 CALL_METHOD              2
+             42 POP_TOP
+
+148          44 LOAD_FAST                0 (self)
+             46 LOAD_ATTR                0 (db)
+             48 LOAD_FAST                1 (username)
+             50 BINARY_SUBSCR
+             52 RETURN_VALUE
+
+Disassembly of <code object del_user at 0x7f360e211e70, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 151>:
+155           0 LOAD_FAST                1 (username)
+              2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (db)
+              6 CONTAINS_OP              0
+              8 POP_JUMP_IF_FALSE       13 (to 26)
+
+156          10 LOAD_GLOBAL              1 (super)
+             12 LOAD_GLOBAL              2 (DigestAuthenticator)
+             14 LOAD_FAST                0 (self)
+             16 CALL_FUNCTION            2
+             18 LOAD_METHOD              3 (del_user)
+             20 LOAD_FAST                1 (username)
+             22 CALL_METHOD              1
+             24 RETURN_VALUE
+
+155     >>   26 LOAD_CONST               0 (None)
+             28 RETURN_VALUE
+
+Disassembly of <code object _inject_user at 0x7f360e210710, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 158>:
+159           0 LOAD_FAST                1 (user)
+              2 LOAD_ATTR                0 (ha1)
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                1 (db)
+              8 LOAD_FAST                1 (user)
+             10 LOAD_ATTR                2 (username)
+             12 STORE_SUBSCR
+             14 LOAD_CONST               0 (None)
+             16 RETURN_VALUE
+
+Disassembly of <code object _load_users at 0x7f360e210c90, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 161>:
+163           0 SETUP_FINALLY           18 (to 38)
+
+164           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (_users_dao)
+              6 LOAD_METHOD              1 (all_users)
+              8 CALL_METHOD              0
+             10 STORE_FAST               1 (users)
+
+165          12 LOAD_FAST                1 (users)
+             14 GET_ITER
+        >>   16 FOR_ITER                 7 (to 32)
+             18 STORE_FAST               2 (user)
+
+166          20 LOAD_FAST                0 (self)
+             22 LOAD_METHOD              2 (_inject_user)
+             24 LOAD_FAST                2 (user)
+             26 CALL_METHOD              1
+             28 POP_TOP
+             30 JUMP_ABSOLUTE            8 (to 16)
+
+165     >>   32 POP_BLOCK
+             34 LOAD_CONST               0 (None)
+             36 RETURN_VALUE
+
+167     >>   38 DUP_TOP
+             40 LOAD_GLOBAL              3 (Exception)
+             42 JUMP_IF_NOT_EXC_MATCH    33 (to 66)
+             44 POP_TOP
+             46 POP_TOP
+             48 POP_TOP
+
+168          50 LOAD_GLOBAL              4 (_logger)
+             52 LOAD_METHOD              5 (warning)
+             54 LOAD_CONST               1 ('Unable to preload users.')
+             56 CALL_METHOD              1
+             58 POP_TOP
+             60 POP_EXCEPT
+             62 LOAD_CONST               0 (None)
+             64 RETURN_VALUE
+
+167     >>   66 RERAISE                  0
+
+Disassembly of <code object Pbkdf2Authenticator at 0x7f360e210190, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 171>:
+171           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('Pbkdf2Authenticator')
+              6 STORE_NAME               2 (__qualname__)
+
+172           8 LOAD_CONST               1 ('\n    This class listens to user model events and handles password storage as appropriate.\n    ')
+             10 STORE_NAME               3 (__doc__)
+
+176          12 LOAD_CONST               2 (<code object __init__ at 0x7f360e2109d0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 176>)
+             14 LOAD_CONST               3 ('Pbkdf2Authenticator.__init__')
+             16 MAKE_FUNCTION            0
+             18 STORE_NAME               4 (__init__)
+
+181          20 LOAD_CONST               4 (<code object is_authenticated at 0x7f360e210ea0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 181>)
+             22 LOAD_CONST               5 ('Pbkdf2Authenticator.is_authenticated')
+             24 MAKE_FUNCTION            0
+             26 STORE_NAME               5 (is_authenticated)
+
+185          28 LOAD_NAME                6 (staticmethod)
+
+186          30 LOAD_CONST               6 (<code object _cleanup at 0x7f360e211000, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 185>)
+             32 LOAD_CONST               7 ('Pbkdf2Authenticator._cleanup')
+             34 MAKE_FUNCTION            0
+             36 CALL_FUNCTION            1
+             38 STORE_NAME               7 (_cleanup)
+
+190          40 LOAD_CONST               8 (<code object set_password_now at 0x7f360e210df0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 190>)
+             42 LOAD_CONST               9 ('Pbkdf2Authenticator.set_password_now')
+             44 MAKE_FUNCTION            0
+             46 STORE_NAME               8 (set_password_now)
+
+198          48 LOAD_CONST              10 (<code object handle_add_user at 0x7f360e211210, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 198>)
+             50 LOAD_CONST              11 ('Pbkdf2Authenticator.handle_add_user')
+             52 MAKE_FUNCTION            0
+             54 STORE_NAME               9 (handle_add_user)
+
+201          56 LOAD_CONST              12 (<code object handle_update_user at 0x7f360e210920, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 201>)
+             58 LOAD_CONST              13 ('Pbkdf2Authenticator.handle_update_user')
+             60 MAKE_FUNCTION            0
+             62 STORE_NAME              10 (handle_update_user)
+
+206          64 LOAD_CONST              14 (<code object handle_del_user at 0x7f360e211630, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 206>)
+             66 LOAD_CONST              15 ('Pbkdf2Authenticator.handle_del_user')
+             68 MAKE_FUNCTION            0
+             70 STORE_NAME              11 (handle_del_user)
+             72 LOAD_CONST              16 (None)
+             74 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e2109d0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 176>:
+177           0 LOAD_FAST                2 (users_dao)
+              2 LOAD_FAST                0 (self)
+              4 STORE_ATTR               0 (_users_dao)
+
+178           6 LOAD_FAST                1 (config)
+              8 LOAD_FAST                0 (self)
+             10 STORE_ATTR               1 (_config)
+
+179          12 LOAD_GLOBAL              2 (Pbkdf2Impl)
+             14 CALL_FUNCTION            0
+             16 LOAD_FAST                0 (self)
+             18 STORE_ATTR               3 (_impl)
+             20 LOAD_CONST               0 (None)
+             22 RETURN_VALUE
+
+Disassembly of <code object is_authenticated at 0x7f360e210ea0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 181>:
+182           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_users_dao)
+              4 LOAD_METHOD              1 (get_user)
+              6 LOAD_FAST                1 (username)
+              8 CALL_METHOD              1
+             10 STORE_FAST               3 (user)
+
+183          12 LOAD_FAST                0 (self)
+             14 LOAD_ATTR                2 (_impl)
+             16 LOAD_METHOD              3 (is_authenticated)
+             18 LOAD_FAST                3 (user)
+             20 LOAD_FAST                2 (password)
+             22 CALL_METHOD              2
+             24 RETURN_VALUE
+
+Disassembly of <code object _cleanup at 0x7f360e211000, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 185>:
+188           0 LOAD_GLOBAL              0 (HashType)
+              2 LOAD_ATTR                1 (PBKDF2_HMAC_SHA256)
+              4 LOAD_ATTR                2 (value)
+              6 LOAD_FAST                0 (user)
+              8 STORE_ATTR               3 (hash_type)
+             10 LOAD_CONST               0 (None)
+             12 RETURN_VALUE
+
+Disassembly of <code object set_password_now at 0x7f360e210df0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 190>:
+194           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_impl)
+              4 LOAD_METHOD              1 (set_password)
+              6 LOAD_FAST                1 (user)
+              8 LOAD_FAST                2 (password)
+             10 CALL_METHOD              2
+             12 POP_TOP
+
+195          14 LOAD_FAST                0 (self)
+             16 LOAD_METHOD              2 (_cleanup)
+             18 LOAD_FAST                1 (user)
+             20 CALL_METHOD              1
+             22 POP_TOP
+
+196          24 LOAD_FAST                0 (self)
+             26 LOAD_ATTR                3 (_users_dao)
+             28 LOAD_METHOD              4 (update_user)
+             30 LOAD_FAST                1 (user)
+             32 CALL_METHOD              1
+             34 POP_TOP
+             36 LOAD_CONST               1 (None)
+             38 RETURN_VALUE
+
+Disassembly of <code object handle_add_user at 0x7f360e211210, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 198>:
+199           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_impl)
+              4 LOAD_METHOD              1 (set_password)
+              6 LOAD_FAST                1 (user)
+              8 LOAD_FAST                2 (password)
+             10 CALL_METHOD              2
+             12 POP_TOP
+             14 LOAD_CONST               0 (None)
+             16 RETURN_VALUE
+
+Disassembly of <code object handle_update_user at 0x7f360e210920, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 201>:
+203           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_impl)
+              4 LOAD_METHOD              1 (set_password)
+              6 LOAD_FAST                1 (user)
+              8 LOAD_FAST                2 (password)
+             10 CALL_METHOD              2
+             12 POP_TOP
+
+204          14 LOAD_FAST                0 (self)
+             16 LOAD_METHOD              2 (_cleanup)
+             18 LOAD_FAST                1 (user)
+             20 CALL_METHOD              1
+             22 POP_TOP
+             24 LOAD_CONST               1 (None)
+             26 RETURN_VALUE
+
+Disassembly of <code object handle_del_user at 0x7f360e211630, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 206>:
+208           0 LOAD_CONST               1 (None)
+              2 RETURN_VALUE
+
+Disassembly of <code object Pbkdf2Impl at 0x7f360e211420, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 211>:
+211           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('Pbkdf2Impl')
+              6 STORE_NAME               2 (__qualname__)
+
+212           8 LOAD_CONST               1 ('\n    Implementation of user authentication methods using PBKDF2 configured to the specifications of SP 800-132.\n    See: https://csrc.nist.gov/publications/detail/sp/800-132/final\n    ')
+             10 STORE_NAME               3 (__doc__)
+
+217          12 LOAD_CONST               2 (100000)
+             14 STORE_NAME               4 (ITERATIONS)
+
+218          16 LOAD_CONST               3 ('sha256')
+             18 STORE_NAME               5 (HASH_NAME)
+
+219          20 LOAD_CONST               4 (256)
+             22 STORE_NAME               6 (KLEN)
+
+220          24 LOAD_CONST               4 (256)
+             26 STORE_NAME               7 (SLEN)
+
+222          28 LOAD_CONST               5 (<code object is_authenticated at 0x7f360e212340, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 222>)
+             30 LOAD_CONST               6 ('Pbkdf2Impl.is_authenticated')
+             32 MAKE_FUNCTION            0
+             34 STORE_NAME               8 (is_authenticated)
+
+232          36 LOAD_CONST               7 (<code object set_password at 0x7f360e211370, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 232>)
+             38 LOAD_CONST               8 ('Pbkdf2Impl.set_password')
+             40 MAKE_FUNCTION            0
+             42 STORE_NAME               9 (set_password)
+             44 LOAD_CONST               9 (None)
+             46 RETURN_VALUE
+
+Disassembly of <code object is_authenticated at 0x7f360e212340, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 222>:
+223           0 LOAD_GLOBAL              0 (os)
+              2 LOAD_METHOD              1 (urandom)
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                2 (SLEN)
+              8 CALL_METHOD              1
+             10 STORE_FAST               3 (random_salt)
+
+224          12 LOAD_FAST                1 (user)
+             14 POP_JUMP_IF_FALSE       28 (to 56)
+
+225          16 LOAD_GLOBAL              3 (hashlib)
+             18 LOAD_METHOD              4 (pbkdf2_hmac)
+             20 LOAD_FAST                0 (self)
+             22 LOAD_ATTR                5 (HASH_NAME)
+             24 LOAD_FAST                2 (password)
+             26 LOAD_METHOD              6 (encode)
+             28 CALL_METHOD              0
+             30 LOAD_FAST                1 (user)
+             32 LOAD_ATTR                7 (salt)
+             34 LOAD_FAST                0 (self)
+             36 LOAD_ATTR                8 (ITERATIONS)
+             38 LOAD_FAST                0 (self)
+             40 LOAD_ATTR                9 (KLEN)
+             42 CALL_METHOD              5
+             44 STORE_FAST               4 (dkey)
+
+226          46 LOAD_FAST                4 (dkey)
+             48 LOAD_FAST                1 (user)
+             50 LOAD_ATTR               10 (dkey)
+             52 COMPARE_OP               2 (==)
+             54 RETURN_VALUE
+
+229     >>   56 LOAD_GLOBAL              3 (hashlib)
+             58 LOAD_METHOD              4 (pbkdf2_hmac)
+             60 LOAD_FAST                0 (self)
+             62 LOAD_ATTR                5 (HASH_NAME)
+             64 LOAD_FAST                2 (password)
+             66 LOAD_METHOD              6 (encode)
+             68 CALL_METHOD              0
+             70 LOAD_FAST                3 (random_salt)
+             72 LOAD_FAST                0 (self)
+             74 LOAD_ATTR                8 (ITERATIONS)
+             76 LOAD_FAST                0 (self)
+             78 LOAD_ATTR                9 (KLEN)
+             80 CALL_METHOD              5
+             82 POP_TOP
+
+230          84 LOAD_CONST               1 (False)
+             86 RETURN_VALUE
+
+Disassembly of <code object set_password at 0x7f360e211370, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 232>:
+233           0 LOAD_GLOBAL              0 (os)
+              2 LOAD_METHOD              1 (urandom)
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                2 (SLEN)
+              8 CALL_METHOD              1
+             10 LOAD_FAST                1 (user)
+             12 STORE_ATTR               3 (salt)
+
+234          14 LOAD_GLOBAL              4 (hashlib)
+             16 LOAD_METHOD              5 (pbkdf2_hmac)
+             18 LOAD_FAST                0 (self)
+             20 LOAD_ATTR                6 (HASH_NAME)
+             22 LOAD_FAST                2 (password)
+             24 LOAD_METHOD              7 (encode)
+             26 CALL_METHOD              0
+             28 LOAD_FAST                1 (user)
+             30 LOAD_ATTR                3 (salt)
+             32 LOAD_FAST                0 (self)
+             34 LOAD_ATTR                8 (ITERATIONS)
+             36 LOAD_FAST                0 (self)
+             38 LOAD_ATTR                9 (KLEN)
+             40 CALL_METHOD              5
+             42 STORE_FAST               3 (dkey)
+
+235          44 LOAD_FAST                3 (dkey)
+             46 LOAD_FAST                1 (user)
+             48 STORE_ATTR              10 (dkey)
+             50 LOAD_CONST               0 (None)
+             52 RETURN_VALUE
+
+Disassembly of <code object RequireAdminForMethods at 0x7f360e2116e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 238>:
+238           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('RequireAdminForMethods')
+              6 STORE_NAME               2 (__qualname__)
+
+239           8 BUILD_LIST               0
+             10 LOAD_CONST               1 (('GET', 'POST', 'DELETE', 'PUT'))
+             12 LIST_EXTEND              1
+             14 STORE_NAME               3 (DEFAULT_ALL_METHODS)
+
+241          16 LOAD_CONST               7 ((None,))
+             18 LOAD_CONST               3 (<code object __init__ at 0x7f360e2114d0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 241>)
+             20 LOAD_CONST               4 ('RequireAdminForMethods.__init__')
+             22 MAKE_FUNCTION            1 (defaults)
+             24 STORE_NAME               4 (__init__)
+
+246          26 LOAD_CONST               5 (<code object __bool__ at 0x7f360e211840, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 246>)
+             28 LOAD_CONST               6 ('RequireAdminForMethods.__bool__')
+             30 MAKE_FUNCTION            0
+             32 STORE_NAME               5 (__bool__)
+             34 LOAD_CONST               2 (None)
+             36 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e2114d0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 241>:
+242           0 LOAD_FAST                1 (methods)
+              2 POP_JUMP_IF_TRUE         5 (to 10)
+
+243           4 LOAD_GLOBAL              0 (RequireAdminForMethods)
+              6 LOAD_ATTR                1 (DEFAULT_ALL_METHODS)
+              8 STORE_FAST               1 (methods)
+
+244     >>   10 LOAD_CONST               1 (<code object <dictcomp> at 0x7f360e211580, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 244>)
+             12 LOAD_CONST               2 ('RequireAdminForMethods.__init__.<locals>.<dictcomp>')
+             14 MAKE_FUNCTION            0
+             16 LOAD_FAST                1 (methods)
+             18 GET_ITER
+             20 CALL_FUNCTION            1
+             22 LOAD_FAST                0 (self)
+             24 STORE_ATTR               2 (methods)
+             26 LOAD_CONST               0 (None)
+             28 RETURN_VALUE
+
+Disassembly of <code object <dictcomp> at 0x7f360e211580, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 244>:
+244           0 BUILD_MAP                0
+              2 LOAD_FAST                0 (.0)
+        >>    4 FOR_ITER                 5 (to 16)
+              6 STORE_FAST               1 (method)
+              8 LOAD_FAST                1 (method)
+             10 LOAD_CONST               0 (True)
+             12 MAP_ADD                  2
+             14 JUMP_ABSOLUTE            2 (to 4)
+        >>   16 RETURN_VALUE
+
+Disassembly of <code object __bool__ at 0x7f360e211840, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 246>:
+247           0 LOAD_GLOBAL              0 (request)
+              2 LOAD_ATTR                1 (method)
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                2 (methods)
+              8 CONTAINS_OP              0
+             10 RETURN_VALUE
+
+Disassembly of <code object RequireAdminForCreateAndDelete at 0x7f360e211bb0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 250>:
+250           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('RequireAdminForCreateAndDelete')
+              6 STORE_NAME               2 (__qualname__)
+
+251           8 LOAD_CLOSURE             0 (__class__)
+             10 BUILD_TUPLE              1
+             12 LOAD_CONST               1 (<code object __init__ at 0x7f360e2121e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 251>)
+             14 LOAD_CONST               2 ('RequireAdminForCreateAndDelete.__init__')
+             16 MAKE_FUNCTION            8 (closure)
+             18 STORE_NAME               3 (__init__)
+             20 LOAD_CLOSURE             0 (__class__)
+             22 DUP_TOP
+             24 STORE_NAME               4 (__classcell__)
+             26 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e2121e0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 251>:
+252           0 LOAD_GLOBAL              0 (super)
+              2 CALL_FUNCTION            0
+              4 LOAD_ATTR                1 (__init__)
+              6 LOAD_CONST               1 ('POST')
+              8 LOAD_CONST               2 ('DELETE')
+             10 BUILD_LIST               2
+             12 LOAD_CONST               3 (('methods',))
+             14 CALL_FUNCTION_KW         1
+             16 POP_TOP
+             18 LOAD_CONST               0 (None)
+             20 RETURN_VALUE
+
+Disassembly of <code object AuthnService at 0x7f360e212ad0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 255>:
+255           0 LOAD_NAME                0 (__name__)
+              2 STORE_NAME               1 (__module__)
+              4 LOAD_CONST               0 ('AuthnService')
+              6 STORE_NAME               2 (__qualname__)
+
+256           8 LOAD_CONST               1 ('\n    The authentication service provides methods useful in authenticating the user the first time and later verifying\n    its level of authentication.\n\n    Whenever other ares of the code add, modify, or remove users, the AuthnService must be made aware of those\n    changes in order to handle the underlying storage of passwords.\n\n    :param _digest_algorithm: (unit test helper) pass this algorithm directly into the DigestAuthenticator\n    :type config: cb.utils.Config\n    ')
+             10 STORE_NAME               3 (__doc__)
+
+267          12 LOAD_CONST              38 ((None,))
+             14 LOAD_CONST               3 (<code object __init__ at 0x7f360e211b00, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 267>)
+             16 LOAD_CONST               4 ('AuthnService.__init__')
+             18 MAKE_FUNCTION            1 (defaults)
+             20 STORE_NAME               4 (__init__)
+
+288          22 LOAD_NAME                5 (property)
+
+289          24 LOAD_CONST               5 (<code object xsrf at 0x7f360e211c60, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 288>)
+             26 LOAD_CONST               6 ('AuthnService.xsrf')
+             28 MAKE_FUNCTION            0
+             30 CALL_FUNCTION            1
+             32 STORE_NAME               6 (xsrf)
+
+292          34 LOAD_NAME                6 (xsrf)
+             36 LOAD_ATTR                7 (setter)
+
+293          38 LOAD_CONST               7 (<code object xsrf at 0x7f360e211dc0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 292>)
+             40 LOAD_CONST               6 ('AuthnService.xsrf')
+             42 MAKE_FUNCTION            0
+             44 CALL_FUNCTION            1
+             46 STORE_NAME               6 (xsrf)
+
+296          48 LOAD_NAME                5 (property)
+
+297          50 LOAD_CONST               8 (<code object mfa_enabled at 0x7f360e211fd0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 296>)
+             52 LOAD_CONST               9 ('AuthnService.mfa_enabled')
+             54 MAKE_FUNCTION            0
+             56 CALL_FUNCTION            1
+             58 STORE_NAME               8 (mfa_enabled)
+
+300          60 LOAD_CONST              39 ((True, False, False))
+             62 LOAD_CONST              12 (<code object requires_auth at 0x7f360e212290, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 300>)
+             64 LOAD_CONST              13 ('AuthnService.requires_auth')
+             66 MAKE_FUNCTION            1 (defaults)
+             68 STORE_NAME               9 (requires_auth)
+
+408          70 LOAD_CONST              38 ((None,))
+             72 LOAD_CONST              14 (<code object perform_blocking_mfa at 0x7f360e210a80, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 408>)
+             74 LOAD_CONST              15 ('AuthnService.perform_blocking_mfa')
+             76 MAKE_FUNCTION            1 (defaults)
+             78 STORE_NAME              10 (perform_blocking_mfa)
+
+420          80 LOAD_NAME               11 (staticmethod)
+
+421          82 LOAD_CONST              16 (<code object _load_mfa_callback at 0x7f360e2126b0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 420>)
+             84 LOAD_CONST              17 ('AuthnService._load_mfa_callback')
+             86 MAKE_FUNCTION            0
+             88 CALL_FUNCTION            1
+             90 STORE_NAME              12 (_load_mfa_callback)
+
+445          92 LOAD_CONST              18 (<code object user_needs_migration at 0x7f360e2123f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 445>)
+             94 LOAD_CONST              19 ('AuthnService.user_needs_migration')
+             96 MAKE_FUNCTION            0
+             98 STORE_NAME              13 (user_needs_migration)
+
+450         100 LOAD_CONST              20 (<code object failed_auth at 0x7f360e2128c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 450>)
+            102 LOAD_CONST              21 ('AuthnService.failed_auth')
+            104 MAKE_FUNCTION            0
+            106 STORE_NAME              14 (failed_auth)
+
+467         108 LOAD_CONST              22 (<code object successful_auth at 0x7f360e212600, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 467>)
+            110 LOAD_CONST              23 ('AuthnService.successful_auth')
+            112 MAKE_FUNCTION            0
+            114 STORE_NAME              15 (successful_auth)
+
+482         116 LOAD_CONST              24 (<code object set_user_last_login at 0x7f360e212550, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 482>)
+            118 LOAD_CONST              25 ('AuthnService.set_user_last_login')
+            120 MAKE_FUNCTION            0
+            122 STORE_NAME              16 (set_user_last_login)
+
+486         124 LOAD_CONST              26 (<code object _log_and_abort at 0x7f360e212760, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 486>)
+            126 LOAD_CONST              27 ('AuthnService._log_and_abort')
+            128 MAKE_FUNCTION            0
+            130 STORE_NAME              17 (_log_and_abort)
+
+490         132 LOAD_NAME               11 (staticmethod)
+
+491         134 LOAD_CONST              28 (<code object _scrub_data at 0x7f360e212a20, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 490>)
+            136 LOAD_CONST              29 ('AuthnService._scrub_data')
+            138 MAKE_FUNCTION            0
+            140 CALL_FUNCTION            1
+            142 STORE_NAME              18 (_scrub_data)
+
+521         144 LOAD_CONST              30 (<code object log_user_activity at 0x7f360e212810, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 521>)
+            146 LOAD_CONST              31 ('AuthnService.log_user_activity')
+            148 MAKE_FUNCTION            0
+            150 STORE_NAME              19 (log_user_activity)
+
+569         152 LOAD_CONST              32 (<code object handle_add_user at 0x7f360e212d90, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 569>)
+            154 LOAD_CONST              33 ('AuthnService.handle_add_user')
+            156 MAKE_FUNCTION            0
+            158 STORE_NAME              20 (handle_add_user)
+
+573         160 LOAD_CONST              34 (<code object handle_update_user at 0x7f360e212970, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 573>)
+            162 LOAD_CONST              35 ('AuthnService.handle_update_user')
+            164 MAKE_FUNCTION            0
+            166 STORE_NAME              21 (handle_update_user)
+
+577         168 LOAD_CONST              36 (<code object handle_del_user at 0x7f360e212ce0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 577>)
+            170 LOAD_CONST              37 ('AuthnService.handle_del_user')
+            172 MAKE_FUNCTION            0
+            174 STORE_NAME              22 (handle_del_user)
+            176 LOAD_CONST               2 (None)
+            178 RETURN_VALUE
+
+Disassembly of <code object __init__ at 0x7f360e211b00, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 267>:
+268           0 LOAD_FAST                1 (config)
+              2 LOAD_FAST                0 (self)
+              4 STORE_ATTR               0 (_config)
+
+269           6 LOAD_CONST               0 (None)
+              8 LOAD_FAST                0 (self)
+             10 STORE_ATTR               1 (_xsrf)
+
+271          12 LOAD_FAST                0 (self)
+             14 LOAD_METHOD              2 (_load_mfa_callback)
+             16 LOAD_FAST                1 (config)
+             18 CALL_METHOD              1
+             20 LOAD_FAST                0 (self)
+             22 STORE_ATTR               3 (_mfa_callback)
+
+272          24 LOAD_GLOBAL              4 (UserManagementDao)
+             26 LOAD_FAST                1 (config)
+             28 CALL_FUNCTION            1
+             30 LOAD_FAST                0 (self)
+             32 STORE_ATTR               5 (_users_dao)
+
+273          34 LOAD_GLOBAL              6 (AuthorizationService)
+             36 LOAD_FAST                1 (config)
+             38 CALL_FUNCTION            1
+             40 LOAD_FAST                0 (self)
+             42 STORE_ATTR               7 (_authorization_service)
+
+277          44 LOAD_FAST                3 (_digest_algorithm)
+             46 POP_JUMP_IF_TRUE        58 (to 116)
+
+278          48 LOAD_GLOBAL              8 (db_session_context)
+             50 LOAD_FAST                1 (config)
+             52 CALL_FUNCTION            1
+             54 SETUP_WITH              22 (to 100)
+             56 STORE_FAST               4 (sess)
+
+279          58 LOAD_GLOBAL              9 (CbSetting)
+             60 LOAD_METHOD             10 (get_hash_type)
+             62 LOAD_FAST                4 (sess)
+             64 CALL_METHOD              1
+             66 STORE_FAST               5 (hash_type)
+
+280          68 LOAD_FAST                5 (hash_type)
+             70 LOAD_GLOBAL             11 (HashType)
+             72 LOAD_ATTR               12 (RFC7616_SHA256)
+             74 COMPARE_OP               2 (==)
+             76 POP_JUMP_IF_FALSE       41 (to 82)
+             78 LOAD_CONST               1 ('sha-256')
+             80 JUMP_FORWARD             1 (to 84)
+        >>   82 LOAD_CONST               2 ('md5')
+        >>   84 STORE_FAST               3 (_digest_algorithm)
+             86 POP_BLOCK
+
+278          88 LOAD_CONST               0 (None)
+             90 DUP_TOP
+             92 DUP_TOP
+             94 CALL_FUNCTION            3
+             96 POP_TOP
+             98 JUMP_FORWARD             8 (to 116)
+        >>  100 WITH_EXCEPT_START
+            102 POP_JUMP_IF_TRUE        53 (to 106)
+            104 RERAISE                  1
+        >>  106 POP_TOP
+            108 POP_TOP
+            110 POP_TOP
+            112 POP_EXCEPT
+            114 POP_TOP
+
+282     >>  116 LOAD_GLOBAL             13 (Pbkdf2Authenticator)
+            118 LOAD_FAST                1 (config)
+            120 LOAD_FAST                0 (self)
+            122 LOAD_ATTR                5 (_users_dao)
+            124 CALL_FUNCTION            2
+            126 LOAD_FAST                0 (self)
+            128 STORE_ATTR              14 (pbkdf2_authenticator)
+
+283         130 LOAD_GLOBAL             15 (DigestAuthenticator)
+            132 LOAD_FAST                1 (config)
+            134 LOAD_FAST                0 (self)
+            136 LOAD_ATTR                5 (_users_dao)
+            138 LOAD_FAST                2 (database_name)
+
+284         140 LOAD_FAST                3 (_digest_algorithm)
+
+283         142 LOAD_CONST               3 (('algorithm',))
+            144 CALL_FUNCTION_KW         4
+            146 LOAD_FAST                0 (self)
+            148 STORE_ATTR              16 (digest_authenticator)
+
+286         150 LOAD_GLOBAL             17 (init_audit_logger)
+            152 LOAD_CONST               4 ('useractivity')
+            154 LOAD_FAST                1 (config)
+            156 CALL_FUNCTION            2
+            158 LOAD_FAST                0 (self)
+            160 STORE_ATTR              18 (_useractivity_audit_logger)
+            162 LOAD_CONST               0 (None)
+            164 RETURN_VALUE
+
+Disassembly of <code object xsrf at 0x7f360e211c60, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 288>:
+290           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_xsrf)
+              4 RETURN_VALUE
+
+Disassembly of <code object xsrf at 0x7f360e211dc0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 292>:
+294           0 LOAD_FAST                1 (csrf)
+              2 LOAD_FAST                0 (self)
+              4 STORE_ATTR               0 (_xsrf)
+              6 LOAD_CONST               0 (None)
+              8 RETURN_VALUE
+
+Disassembly of <code object mfa_enabled at 0x7f360e211fd0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 296>:
+298           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_mfa_callback)
+              4 LOAD_CONST               0 (None)
+              6 IS_OP                    1
+              8 RETURN_VALUE
+
+Disassembly of <code object requires_auth at 0x7f360e212290, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 300>:
+301           0 LOAD_CLOSURE             0 (allow_auth_token)
+              2 LOAD_CLOSURE             1 (require_global_admin)
+              4 LOAD_CLOSURE             2 (self)
+              6 BUILD_TUPLE              3
+              8 LOAD_CONST               1 (<code object wrapper at 0x7f360e212080, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 301>)
+             10 LOAD_CONST               2 ('AuthnService.requires_auth.<locals>.wrapper')
+             12 MAKE_FUNCTION            8 (closure)
+             14 STORE_FAST               4 (wrapper)
+
+406          16 LOAD_FAST                4 (wrapper)
+             18 RETURN_VALUE
+
+Disassembly of <code object wrapper at 0x7f360e212080, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 301>:
+304           0 LOAD_DEREF               1 (allow_auth_token)
+              2 POP_JUMP_IF_FALSE        8 (to 16)
+
+305           4 LOAD_DEREF               3 (self)
+              6 LOAD_ATTR                0 (xsrf)
+              8 LOAD_METHOD              1 (auth_token_exempt)
+             10 LOAD_DEREF               0 (f)
+             12 CALL_METHOD              1
+             14 POP_TOP
+
+308     >>   16 LOAD_GLOBAL              2 (wraps)
+             18 LOAD_DEREF               0 (f)
+             20 CALL_FUNCTION            1
+
+309          22 LOAD_CLOSURE             1 (allow_auth_token)
+             24 LOAD_CLOSURE             0 (f)
+             26 LOAD_CLOSURE             2 (require_global_admin)
+             28 LOAD_CLOSURE             3 (self)
+             30 BUILD_TUPLE              4
+             32 LOAD_CONST               1 (<code object wrapped_f at 0x7f360e210450, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 308>)
+             34 LOAD_CONST               2 ('AuthnService.requires_auth.<locals>.wrapper.<locals>.wrapped_f')
+             36 MAKE_FUNCTION            8 (closure)
+             38 CALL_FUNCTION            1
+             40 STORE_FAST               1 (wrapped_f)
+
+404          42 LOAD_FAST                1 (wrapped_f)
+             44 RETURN_VALUE
+
+Disassembly of <code object wrapped_f at 0x7f360e210450, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 308>:
+310           0 LOAD_GLOBAL              0 (get_forwarded_for)
+              2 CALL_FUNCTION            0
+              4 STORE_FAST               2 (forwarded_for)
+
+314           6 LOAD_CONST               1 ('X-Auth-Token')
+              8 LOAD_GLOBAL              1 (request)
+             10 LOAD_ATTR                2 (headers)
+             12 CONTAINS_OP              0
+             14 POP_JUMP_IF_FALSE      184 (to 368)
+
+315          16 LOAD_GLOBAL              1 (request)
+             18 LOAD_ATTR                2 (headers)
+             20 LOAD_GLOBAL              3 (_X_AUTH_TOKEN)
+             22 BINARY_SUBSCR
+             24 STORE_FAST               3 (token)
+
+316          26 LOAD_DEREF               3 (self)
+             28 LOAD_ATTR                4 (_users_dao)
+             30 LOAD_METHOD              5 (get_user_by_auth_token)
+             32 LOAD_FAST                3 (token)
+             34 CALL_METHOD              1
+             36 STORE_FAST               4 (token_user)
+
+320          38 LOAD_DEREF               0 (allow_auth_token)
+             40 POP_JUMP_IF_TRUE        37 (to 74)
+
+321          42 LOAD_FAST                4 (token_user)
+             44 POP_JUMP_IF_FALSE       27 (to 54)
+
+322          46 LOAD_FAST                4 (token_user)
+             48 LOAD_ATTR                6 (id)
+             50 STORE_FAST               5 (_id)
+             52 JUMP_FORWARD             2 (to 58)
+
+324     >>   54 LOAD_CONST               0 (None)
+             56 STORE_FAST               5 (_id)
+
+325     >>   58 LOAD_DEREF               3 (self)
+             60 LOAD_METHOD              7 (_log_and_abort)
+             62 LOAD_FAST                5 (_id)
+             64 LOAD_CONST               2 (403)
+             66 LOAD_FAST                2 (forwarded_for)
+             68 LOAD_GLOBAL              1 (request)
+             70 CALL_METHOD              4
+             72 POP_TOP
+
+330     >>   74 LOAD_FAST                4 (token_user)
+             76 LOAD_GLOBAL              8 (g)
+             78 STORE_ATTR               9 (token_user)
+
+331          80 LOAD_GLOBAL              8 (g)
+             82 LOAD_ATTR                9 (token_user)
+             84 POP_JUMP_IF_FALSE      176 (to 352)
+
+332          86 LOAD_DEREF               3 (self)
+             88 LOAD_ATTR               10 (_cbcache)
+             90 LOAD_METHOD             11 (get)
+             92 LOAD_FAST                3 (token)
+             94 CALL_METHOD              1
+             96 LOAD_CONST               0 (None)
+             98 IS_OP                    0
+            100 POP_JUMP_IF_FALSE       71 (to 142)
+
+336         102 LOAD_FAST                2 (forwarded_for)
+            104 POP_JUMP_IF_TRUE        63 (to 126)
+
+337         106 LOAD_DEREF               3 (self)
+            108 LOAD_METHOD              7 (_log_and_abort)
+            110 LOAD_GLOBAL              8 (g)
+            112 LOAD_ATTR                9 (token_user)
+            114 LOAD_ATTR                6 (id)
+            116 LOAD_CONST               3 (400)
+            118 LOAD_CONST               0 (None)
+            120 LOAD_GLOBAL              1 (request)
+            122 CALL_METHOD              4
+            124 POP_TOP
+
+340     >>  126 LOAD_DEREF               3 (self)
+            128 LOAD_ATTR               10 (_cbcache)
+            130 LOAD_METHOD             12 (set)
+            132 LOAD_FAST                3 (token)
+            134 LOAD_CONST               4 ('True')
+            136 LOAD_CONST               5 (14400)
+            138 CALL_METHOD              3
+            140 POP_TOP
+
+342     >>  142 LOAD_DEREF               2 (require_global_admin)
+            144 POP_JUMP_IF_FALSE       88 (to 176)
+            146 LOAD_DEREF               3 (self)
+            148 LOAD_ATTR               13 (_authorization_service)
+            150 LOAD_METHOD             14 (is_user_global_admin)
+            152 CALL_METHOD              0
+            154 POP_JUMP_IF_TRUE        88 (to 176)
+
+343         156 LOAD_DEREF               3 (self)
+            158 LOAD_METHOD              7 (_log_and_abort)
+            160 LOAD_GLOBAL              8 (g)
+            162 LOAD_ATTR                9 (token_user)
+            164 LOAD_ATTR                6 (id)
+            166 LOAD_CONST               2 (403)
+            168 LOAD_CONST               0 (None)
+            170 LOAD_GLOBAL              1 (request)
+            172 CALL_METHOD              4
+            174 POP_TOP
+
+345     >>  176 LOAD_DEREF               3 (self)
+            178 LOAD_ATTR               15 (mfa_enabled)
+            180 POP_JUMP_IF_FALSE      114 (to 228)
+
+346         182 LOAD_DEREF               3 (self)
+            184 LOAD_ATTR               16 (perform_blocking_mfa)
+            186 LOAD_CONST               6 (True)
+            188 LOAD_GLOBAL              8 (g)
+            190 LOAD_ATTR                9 (token_user)
+            192 LOAD_CONST               7 (('api_token', 'user'))
+            194 CALL_FUNCTION_KW         2
+            196 POP_JUMP_IF_TRUE       114 (to 228)
+
+347         198 LOAD_GLOBAL             17 (_logger)
+            200 LOAD_METHOD             18 (warning)
+            202 LOAD_CONST               8 ('2FA refusing apitoken auth for %s %s for "%s"')
+
+348         204 LOAD_GLOBAL              1 (request)
+            206 LOAD_ATTR               19 (method)
+            208 LOAD_GLOBAL              1 (request)
+            210 LOAD_ATTR               20 (path)
+            212 LOAD_GLOBAL              8 (g)
+            214 LOAD_ATTR                9 (token_user)
+            216 LOAD_ATTR               21 (username)
+
+347         218 CALL_METHOD              4
+            220 POP_TOP
+
+349         222 LOAD_GLOBAL             22 (TwoFactorAuthError)
+            224 CALL_FUNCTION            0
+            226 RAISE_VARARGS            1
+
+351     >>  228 LOAD_CONST               9 (0)
+            230 STORE_FAST               6 (status_code)
+
+352         232 SETUP_FINALLY           48 (to 330)
+            234 SETUP_FINALLY           15 (to 266)
+
+353         236 LOAD_DEREF               1 (f)
+            238 LOAD_FAST                0 (args)
+            240 BUILD_MAP                0
+            242 LOAD_FAST                1 (kwargs)
+            244 DICT_MERGE               1
+            246 CALL_FUNCTION_EX         1
+            248 STORE_FAST               7 (rc)
+
+354         250 LOAD_GLOBAL             23 (getattr)
+            252 LOAD_FAST                7 (rc)
+            254 LOAD_CONST              10 ('status_code')
+            256 LOAD_CONST               9 (0)
+            258 CALL_FUNCTION            3
+            260 STORE_FAST               6 (status_code)
+            262 POP_BLOCK
+            264 JUMP_FORWARD            19 (to 304)
+
+355     >>  266 DUP_TOP
+            268 LOAD_GLOBAL             24 (HTTPException)
+            270 JUMP_IF_NOT_EXC_MATCH   151 (to 302)
+            272 POP_TOP
+            274 STORE_FAST               8 (ex)
+            276 POP_TOP
+            278 SETUP_FINALLY            7 (to 294)
+
+356         280 LOAD_GLOBAL             23 (getattr)
+            282 LOAD_FAST                8 (ex)
+            284 LOAD_CONST              11 ('code')
+            286 LOAD_CONST               9 (0)
+            288 CALL_FUNCTION            3
+            290 STORE_FAST               6 (status_code)
+
+357         292 RAISE_VARARGS            0
+        >>  294 LOAD_CONST               0 (None)
+            296 STORE_FAST               8 (ex)
+            298 DELETE_FAST              8 (ex)
+            300 RERAISE                  1
+
+355     >>  302 RERAISE                  0
+
+354     >>  304 POP_BLOCK
+
+359         306 LOAD_DEREF               3 (self)
+            308 LOAD_METHOD             25 (log_user_activity)
+            310 LOAD_GLOBAL              8 (g)
+            312 LOAD_ATTR                9 (token_user)
+            314 LOAD_ATTR                6 (id)
+            316 LOAD_FAST                6 (status_code)
+            318 LOAD_FAST                2 (forwarded_for)
+            320 LOAD_GLOBAL              1 (request)
+            322 CALL_METHOD              4
+            324 POP_TOP
+
+360         326 LOAD_FAST                7 (rc)
+            328 RETURN_VALUE
+
+359     >>  330 LOAD_DEREF               3 (self)
+            332 LOAD_METHOD             25 (log_user_activity)
+            334 LOAD_GLOBAL              8 (g)
+            336 LOAD_ATTR                9 (token_user)
+            338 LOAD_ATTR                6 (id)
+            340 LOAD_FAST                6 (status_code)
+            342 LOAD_FAST                2 (forwarded_for)
+            344 LOAD_GLOBAL              1 (request)
+            346 CALL_METHOD              4
+            348 POP_TOP
+            350 RERAISE                  0
+
+363     >>  352 LOAD_DEREF               3 (self)
+            354 LOAD_METHOD              7 (_log_and_abort)
+            356 LOAD_CONST               0 (None)
+            358 LOAD_CONST              12 (401)
+            360 LOAD_FAST                2 (forwarded_for)
+            362 LOAD_GLOBAL              1 (request)
+            364 CALL_METHOD              4
+            366 POP_TOP
+
+367     >>  368 LOAD_CONST              13 ('X-No-Session-Update')
+            370 LOAD_GLOBAL              1 (request)
+            372 LOAD_ATTR                2 (headers)
+            374 CONTAINS_OP              0
+            376 POP_JUMP_IF_FALSE      193 (to 386)
+
+368         378 LOAD_CONST              14 (False)
+            380 LOAD_GLOBAL             26 (session)
+            382 STORE_ATTR              27 (modified)
+            384 JUMP_FORWARD             3 (to 392)
+
+370     >>  386 LOAD_CONST               6 (True)
+            388 LOAD_GLOBAL             26 (session)
+            390 STORE_ATTR              27 (modified)
+
+374     >>  392 LOAD_CONST              15 ('uid')
+            394 LOAD_GLOBAL             26 (session)
+            396 CONTAINS_OP              1
+            398 POP_JUMP_IF_TRUE       205 (to 410)
+            400 LOAD_DEREF               3 (self)
+            402 LOAD_ATTR               13 (_authorization_service)
+            404 LOAD_METHOD             28 (get_current_request_user)
+            406 CALL_METHOD              0
+            408 POP_JUMP_IF_TRUE       234 (to 468)
+
+375     >>  410 LOAD_CONST              15 ('uid')
+            412 LOAD_GLOBAL             26 (session)
+            414 CONTAINS_OP              0
+            416 POP_JUMP_IF_FALSE      221 (to 442)
+
+377         418 LOAD_GLOBAL             29 (ClearActiveLoginService)
+            420 CALL_FUNCTION            0
+            422 LOAD_METHOD             30 (clear_active_login)
+            424 LOAD_DEREF               3 (self)
+            426 LOAD_ATTR               10 (_cbcache)
+            428 CALL_METHOD              1
+            430 POP_TOP
+
+378         432 LOAD_GLOBAL             26 (session)
+            434 LOAD_METHOD             31 (pop)
+            436 LOAD_CONST              15 ('uid')
+            438 CALL_METHOD              1
+            440 POP_TOP
+
+380     >>  442 LOAD_DEREF               3 (self)
+            444 LOAD_METHOD             25 (log_user_activity)
+            446 LOAD_CONST               0 (None)
+            448 LOAD_CONST               2 (403)
+            450 LOAD_FAST                2 (forwarded_for)
+            452 LOAD_GLOBAL              1 (request)
+            454 CALL_METHOD              4
+            456 POP_TOP
+
+381         458 LOAD_GLOBAL             32 (flask)
+            460 LOAD_METHOD             33 (abort)
+            462 LOAD_CONST               2 (403)
+            464 CALL_METHOD              1
+            466 RETURN_VALUE
+
+383     >>  468 LOAD_DEREF               2 (require_global_admin)
+            470 POP_JUMP_IF_FALSE      253 (to 506)
+            472 LOAD_DEREF               3 (self)
+            474 LOAD_ATTR               13 (_authorization_service)
+            476 LOAD_METHOD             14 (is_user_global_admin)
+            478 CALL_METHOD              0
+            480 POP_JUMP_IF_TRUE       253 (to 506)
+
+384         482 LOAD_DEREF               3 (self)
+            484 LOAD_METHOD              7 (_log_and_abort)
+            486 LOAD_GLOBAL             26 (session)
+            488 LOAD_METHOD             11 (get)
+            490 LOAD_CONST              15 ('uid')
+            492 LOAD_CONST               0 (None)
+            494 CALL_METHOD              2
+            496 LOAD_CONST               2 (403)
+            498 LOAD_FAST                2 (forwarded_for)
+            500 LOAD_GLOBAL              1 (request)
+            502 CALL_METHOD              4
+            504 POP_TOP
+
+386     >>  506 LOAD_DEREF               3 (self)
+            508 LOAD_ATTR               15 (mfa_enabled)
+            510 EXTENDED_ARG             1
+            512 POP_JUMP_IF_FALSE      284 (to 568)
+
+387         514 LOAD_DEREF               3 (self)
+            516 LOAD_ATTR               13 (_authorization_service)
+            518 LOAD_METHOD             28 (get_current_request_user)
+            520 CALL_METHOD              0
+            522 STORE_FAST               9 (request_user)
+
+388         524 LOAD_DEREF               3 (self)
+            526 LOAD_ATTR               16 (perform_blocking_mfa)
+            528 LOAD_CONST              14 (False)
+            530 LOAD_FAST                9 (request_user)
+            532 LOAD_CONST               7 (('api_token', 'user'))
+            534 CALL_FUNCTION_KW         2
+            536 EXTENDED_ARG             1
+            538 POP_JUMP_IF_TRUE       284 (to 568)
+
+389         540 LOAD_GLOBAL             17 (_logger)
+            542 LOAD_METHOD             18 (warning)
+            544 LOAD_CONST              16 ('2FA refusing digest auth for %s %s for "%s"')
+
+390         546 LOAD_GLOBAL              1 (request)
+            548 LOAD_ATTR               19 (method)
+            550 LOAD_GLOBAL              1 (request)
+            552 LOAD_ATTR               20 (path)
+            554 LOAD_FAST                9 (request_user)
+            556 LOAD_ATTR               21 (username)
+
+389         558 CALL_METHOD              4
+            560 POP_TOP
+
+391         562 LOAD_GLOBAL             22 (TwoFactorAuthError)
+            564 CALL_FUNCTION            0
+            566 RAISE_VARARGS            1
+
+393     >>  568 LOAD_CONST               9 (0)
+            570 STORE_FAST               6 (status_code)
+
+394         572 SETUP_FINALLY           51 (to 676)
+            574 SETUP_FINALLY           15 (to 606)
+
+395         576 LOAD_DEREF               1 (f)
+            578 LOAD_FAST                0 (args)
+            580 BUILD_MAP                0
+            582 LOAD_FAST                1 (kwargs)
+            584 DICT_MERGE               1
+            586 CALL_FUNCTION_EX         1
+            588 STORE_FAST               7 (rc)
+
+396         590 LOAD_GLOBAL             23 (getattr)
+            592 LOAD_FAST                7 (rc)
+            594 LOAD_CONST              10 ('status_code')
+            596 LOAD_CONST               9 (0)
+            598 CALL_FUNCTION            3
+            600 STORE_FAST               6 (status_code)
+            602 POP_BLOCK
+            604 JUMP_FORWARD            20 (to 646)
+
+397     >>  606 DUP_TOP
+            608 LOAD_GLOBAL             24 (HTTPException)
+            610 EXTENDED_ARG             1
+            612 JUMP_IF_NOT_EXC_MATCH   322 (to 644)
+            614 POP_TOP
+            616 STORE_FAST               8 (ex)
+            618 POP_TOP
+            620 SETUP_FINALLY            7 (to 636)
+
+398         622 LOAD_GLOBAL             23 (getattr)
+            624 LOAD_FAST                8 (ex)
+            626 LOAD_CONST              11 ('code')
+            628 LOAD_CONST               9 (0)
+            630 CALL_FUNCTION            3
+            632 STORE_FAST               6 (status_code)
+
+399         634 RAISE_VARARGS            0
+        >>  636 LOAD_CONST               0 (None)
+            638 STORE_FAST               8 (ex)
+            640 DELETE_FAST              8 (ex)
+            642 RERAISE                  1
+
+397     >>  644 RERAISE                  0
+
+396     >>  646 POP_BLOCK
+
+401         648 LOAD_DEREF               3 (self)
+            650 LOAD_METHOD             25 (log_user_activity)
+            652 LOAD_GLOBAL             26 (session)
+            654 LOAD_METHOD             11 (get)
+            656 LOAD_CONST              15 ('uid')
+            658 LOAD_CONST               0 (None)
+            660 CALL_METHOD              2
+            662 LOAD_FAST                6 (status_code)
+            664 LOAD_FAST                2 (forwarded_for)
+            666 LOAD_GLOBAL              1 (request)
+            668 CALL_METHOD              4
+            670 POP_TOP
+
+402         672 LOAD_FAST                7 (rc)
+            674 RETURN_VALUE
+
+401     >>  676 LOAD_DEREF               3 (self)
+            678 LOAD_METHOD             25 (log_user_activity)
+            680 LOAD_GLOBAL             26 (session)
+            682 LOAD_METHOD             11 (get)
+            684 LOAD_CONST              15 ('uid')
+            686 LOAD_CONST               0 (None)
+            688 CALL_METHOD              2
+            690 LOAD_FAST                6 (status_code)
+            692 LOAD_FAST                2 (forwarded_for)
+            694 LOAD_GLOBAL              1 (request)
+            696 CALL_METHOD              4
+            698 POP_TOP
+            700 RERAISE                  0
+
+Disassembly of <code object perform_blocking_mfa at 0x7f360e210a80, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 408>:
+409           0 LOAD_FAST                2 (user)
+              2 JUMP_IF_TRUE_OR_POP      6 (to 12)
+              4 LOAD_FAST                0 (self)
+              6 LOAD_ATTR                0 (_authorization_service)
+              8 LOAD_METHOD              1 (get_current_request_user)
+             10 CALL_METHOD              0
+        >>   12 STORE_FAST               3 (user_context)
+
+410          14 LOAD_FAST                3 (user_context)
+             16 LOAD_CONST               0 (None)
+             18 IS_OP                    1
+             20 POP_JUMP_IF_FALSE       14 (to 28)
+             22 LOAD_FAST                3 (user_context)
+             24 LOAD_ATTR                2 (id)
+             26 JUMP_FORWARD             1 (to 30)
+        >>   28 LOAD_CONST               0 (None)
+        >>   30 STORE_FAST               4 (user_id)
+
+411          32 LOAD_FAST                3 (user_context)
+             34 LOAD_CONST               0 (None)
+             36 IS_OP                    1
+             38 POP_JUMP_IF_FALSE       23 (to 46)
+             40 LOAD_FAST                3 (user_context)
+             42 LOAD_ATTR                3 (username)
+             44 JUMP_FORWARD             1 (to 48)
+        >>   46 LOAD_CONST               0 (None)
+        >>   48 STORE_FAST               5 (user_name)
+
+412          50 SETUP_FINALLY            8 (to 68)
+
+413          52 LOAD_GLOBAL              4 (json)
+             54 LOAD_METHOD              5 (loads)
+             56 LOAD_GLOBAL              6 (request)
+             58 LOAD_ATTR                7 (data)
+             60 CALL_METHOD              1
+             62 STORE_FAST               6 (request_data)
+             64 POP_BLOCK
+             66 JUMP_FORWARD            11 (to 90)
+
+414     >>   68 DUP_TOP
+             70 LOAD_GLOBAL              8 (JSONDecodeError)
+             72 JUMP_IF_NOT_EXC_MATCH    44 (to 88)
+             74 POP_TOP
+             76 POP_TOP
+             78 POP_TOP
+
+415          80 BUILD_MAP                0
+             82 STORE_FAST               6 (request_data)
+             84 POP_EXCEPT
+             86 JUMP_FORWARD             1 (to 90)
+
+414     >>   88 RERAISE                  0
+
+416     >>   90 LOAD_FAST                0 (self)
+             92 LOAD_ATTR                9 (_mfa_callback)
+             94 LOAD_FAST                4 (user_id)
+             96 LOAD_FAST                5 (user_name)
+             98 LOAD_GLOBAL              6 (request)
+            100 LOAD_ATTR               10 (path)
+
+417         102 LOAD_GLOBAL              6 (request)
+            104 LOAD_ATTR               11 (method)
+            106 LOAD_FAST                1 (api_token)
+
+418         108 LOAD_GLOBAL             12 (get_forwarded_for)
+            110 CALL_FUNCTION            0
+            112 LOAD_FAST                6 (request_data)
+
+416         114 LOAD_CONST               1 (('user_id', 'user_name', 'path', 'method', 'api_token', 'requesting_ip', 'request_data'))
+            116 CALL_FUNCTION_KW         7
+            118 RETURN_VALUE
+
+Disassembly of <code object _load_mfa_callback at 0x7f360e2126b0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 420>:
+422           0 LOAD_FAST                0 (config)
+              2 LOAD_ATTR                0 (TwoFactorAuthCallbackModulePath)
+              4 STORE_FAST               1 (mfa_callback_path)
+
+423           6 LOAD_FAST                1 (mfa_callback_path)
+              8 LOAD_CONST               0 (None)
+             10 IS_OP                    0
+             12 POP_JUMP_IF_FALSE       14 (to 28)
+
+424          14 LOAD_GLOBAL              1 (_logger)
+             16 LOAD_METHOD              2 (debug)
+             18 LOAD_CONST               1 ('Two Factor Auth not configured.')
+             20 CALL_METHOD              1
+             22 POP_TOP
+
+425          24 LOAD_CONST               0 (None)
+             26 RETURN_VALUE
+
+427     >>   28 LOAD_CONST               0 (None)
+             30 STORE_FAST               2 (mfa_cb)
+
+429          32 SETUP_FINALLY           51 (to 136)
+
+431          34 LOAD_GLOBAL              3 (os)
+             36 LOAD_METHOD              4 (access)
+             38 LOAD_FAST                1 (mfa_callback_path)
+             40 LOAD_GLOBAL              3 (os)
+             42 LOAD_ATTR                5 (R_OK)
+             44 CALL_METHOD              2
+             46 POP_JUMP_IF_TRUE        33 (to 66)
+
+432          48 LOAD_GLOBAL              1 (_logger)
+             50 LOAD_METHOD              6 (error)
+             52 LOAD_CONST               2 ('Not using Two Factor Auth.  TwoFactorAuthCallbackModulePath does not point to a readable file: %s')
+
+434          54 LOAD_FAST                1 (mfa_callback_path)
+
+432          56 CALL_METHOD              2
+             58 POP_TOP
+             60 POP_BLOCK
+
+443          62 LOAD_FAST                2 (mfa_cb)
+             64 RETURN_VALUE
+
+436     >>   66 LOAD_GLOBAL              3 (os)
+             68 LOAD_ATTR                7 (path)
+             70 LOAD_METHOD              8 (splitext)
+             72 LOAD_GLOBAL              3 (os)
+             74 LOAD_ATTR                7 (path)
+             76 LOAD_METHOD              9 (split)
+             78 LOAD_FAST                1 (mfa_callback_path)
+             80 CALL_METHOD              1
+             82 LOAD_CONST               3 (-1)
+             84 BINARY_SUBSCR
+             86 CALL_METHOD              1
+             88 UNPACK_SEQUENCE          2
+             90 STORE_FAST               3 (module_name)
+             92 STORE_FAST               4 (_)
+
+437          94 LOAD_GLOBAL             10 (SourceFileLoader)
+             96 LOAD_FAST                3 (module_name)
+             98 LOAD_FAST                1 (mfa_callback_path)
+            100 CALL_FUNCTION            2
+            102 LOAD_METHOD             11 (load_module)
+            104 CALL_METHOD              0
+            106 STORE_FAST               5 (mod)
+
+438         108 LOAD_GLOBAL             12 (getattr)
+            110 LOAD_FAST                5 (mod)
+            112 LOAD_CONST               4 ('authenticate')
+            114 CALL_FUNCTION            2
+            116 STORE_FAST               2 (mfa_cb)
+
+439         118 LOAD_GLOBAL              1 (_logger)
+            120 LOAD_METHOD             13 (info)
+            122 LOAD_CONST               5 ('Using Two Factor Auth module at path: %s')
+            124 LOAD_FAST                1 (mfa_callback_path)
+            126 CALL_METHOD              2
+            128 POP_TOP
+            130 POP_BLOCK
+
+443         132 LOAD_FAST                2 (mfa_cb)
+            134 RETURN_VALUE
+
+440     >>  136 DUP_TOP
+            138 LOAD_GLOBAL             14 (Exception)
+            140 JUMP_IF_NOT_EXC_MATCH    82 (to 164)
+            142 POP_TOP
+            144 POP_TOP
+            146 POP_TOP
+
+441         148 LOAD_GLOBAL              1 (_logger)
+            150 LOAD_METHOD             15 (exception)
+            152 LOAD_CONST               6 ('Error configuring Two Factor Auth.')
+            154 CALL_METHOD              1
+            156 POP_TOP
+            158 POP_EXCEPT
+
+443         160 LOAD_FAST                2 (mfa_cb)
+            162 RETURN_VALUE
+
+440     >>  164 RERAISE                  0
+
+Disassembly of <code object user_needs_migration at 0x7f360e2123f0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 445>:
+447           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_users_dao)
+              4 LOAD_METHOD              1 (get_user)
+              6 LOAD_FAST                1 (username)
+              8 CALL_METHOD              1
+             10 STORE_FAST               2 (user)
+
+448          12 LOAD_FAST                2 (user)
+             14 LOAD_ATTR                2 (hash_type)
+             16 LOAD_GLOBAL              3 (HashType)
+             18 LOAD_ATTR                4 (PBKDF2_HMAC_SHA256)
+             20 LOAD_ATTR                5 (value)
+             22 COMPARE_OP               3 (!=)
+             24 RETURN_VALUE
+
+Disassembly of <code object failed_auth at 0x7f360e2128c0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 450>:
+451           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (_users_dao)
+              4 LOAD_METHOD              1 (get_user)
+              6 LOAD_FAST                1 (username)
+              8 CALL_METHOD              1
+             10 STORE_FAST               2 (user)
+
+452          12 LOAD_FAST                2 (user)
+             14 POP_JUMP_IF_FALSE       65 (to 130)
+
+454          16 LOAD_FAST                2 (user)
+             18 LOAD_ATTR                2 (num_failed_logons)
+             20 LOAD_CONST               0 (None)
+             22 IS_OP                    0
+             24 POP_JUMP_IF_FALSE       16 (to 32)
+
+455          26 LOAD_CONST               1 (0)
+             28 LOAD_FAST                2 (user)
+             30 STORE_ATTR               2 (num_failed_logons)
+
+456     >>   32 LOAD_FAST                2 (user)
+             34 LOAD_ATTR                3 (num_successive_failed_logons)
+             36 LOAD_CONST               0 (None)
+             38 IS_OP                    0
+             40 POP_JUMP_IF_FALSE       24 (to 48)
+
+457          42 LOAD_CONST               1 (0)
+             44 LOAD_FAST                2 (user)
+             46 STORE_ATTR               3 (num_successive_failed_logons)
+
+458     >>   48 LOAD_FAST                2 (user)
+             50 DUP_TOP
+             52 LOAD_ATTR                2 (num_failed_logons)
+             54 LOAD_CONST               2 (1)
+             56 INPLACE_ADD
+             58 ROT_TWO
+             60 STORE_ATTR               2 (num_failed_logons)
+
+459          62 LOAD_FAST                2 (user)
+             64 DUP_TOP
+             66 LOAD_ATTR                3 (num_successive_failed_logons)
+             68 LOAD_CONST               2 (1)
+             70 INPLACE_ADD
+             72 ROT_TWO
+             74 STORE_ATTR               3 (num_successive_failed_logons)
+
+460          76 LOAD_GLOBAL              4 (get_utcnow_with_tzinfo)
+             78 CALL_FUNCTION            0
+             80 LOAD_FAST                2 (user)
+             82 STORE_ATTR               5 (last_login_attempt)
+
+462          84 LOAD_FAST                0 (self)
+             86 LOAD_ATTR                0 (_users_dao)
+             88 LOAD_METHOD              6 (update_user)
+             90 LOAD_FAST                2 (user)
+             92 CALL_METHOD              1
+             94 POP_TOP
+
+463          96 LOAD_FAST                0 (self)
+             98 LOAD_METHOD              7 (log_user_activity)
+            100 LOAD_FAST                2 (user)
+            102 LOAD_ATTR                8 (id)
+            104 LOAD_CONST               3 (403)
+            106 LOAD_GLOBAL              9 (get_forwarded_for)
+            108 CALL_FUNCTION            0
+            110 LOAD_GLOBAL             10 (request)
+            112 CALL_METHOD              4
+            114 POP_TOP
+
+464         116 LOAD_FAST                2 (user)
+            118 LOAD_ATTR                3 (num_successive_failed_logons)
+            120 LOAD_CONST               4 (10)
+            122 COMPARE_OP               5 (>=)
+            124 POP_JUMP_IF_FALSE       67 (to 134)
+
+465         126 LOAD_GLOBAL             11 (AccountLockedException)
+            128 RAISE_VARARGS            1
+
+452     >>  130 LOAD_CONST               0 (None)
+            132 RETURN_VALUE
+
+464     >>  134 LOAD_CONST               0 (None)
+            136 RETURN_VALUE
+
+Disassembly of <code object successful_auth at 0x7f360e212600, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 467>:
+468           0 LOAD_FAST                1 (user_or_username)
+              2 STORE_FAST               2 (user)
+
+469           4 LOAD_GLOBAL              0 (isinstance)
+              6 LOAD_FAST                1 (user_or_username)
+              8 LOAD_GLOBAL              1 (str)
+             10 CALL_FUNCTION            2
+             12 POP_JUMP_IF_FALSE       13 (to 26)
+
+470          14 LOAD_FAST                0 (self)
+             16 LOAD_ATTR                2 (_users_dao)
+             18 LOAD_METHOD              3 (get_user)
+             20 LOAD_FAST                1 (user_or_username)
+             22 CALL_METHOD              1
+             24 STORE_FAST               2 (user)
+
+471     >>   26 LOAD_FAST                2 (user)
+             28 POP_JUMP_IF_FALSE       55 (to 110)
+
+472          30 LOAD_FAST                2 (user)
+             32 LOAD_ATTR                4 (num_successful_logons)
+             34 LOAD_CONST               0 (None)
+             36 IS_OP                    0
+             38 POP_JUMP_IF_FALSE       23 (to 46)
+
+473          40 LOAD_CONST               1 (0)
+             42 LOAD_FAST                2 (user)
+             44 STORE_ATTR               4 (num_successful_logons)
+
+474     >>   46 LOAD_FAST                2 (user)
+             48 DUP_TOP
+             50 LOAD_ATTR                4 (num_successful_logons)
+             52 LOAD_CONST               2 (1)
+             54 INPLACE_ADD
+             56 ROT_TWO
+             58 STORE_ATTR               4 (num_successful_logons)
+
+475          60 LOAD_CONST               1 (0)
+             62 LOAD_FAST                2 (user)
+             64 STORE_ATTR               5 (num_successive_failed_logons)
+
+476          66 LOAD_GLOBAL              6 (get_utcnow_with_tzinfo)
+             68 CALL_FUNCTION            0
+             70 LOAD_FAST                2 (user)
+             72 STORE_ATTR               7 (last_login_attempt)
+
+477          74 LOAD_FAST                0 (self)
+             76 LOAD_ATTR                2 (_users_dao)
+             78 LOAD_METHOD              8 (update_user)
+             80 LOAD_FAST                2 (user)
+             82 CALL_METHOD              1
+             84 POP_TOP
+
+478          86 LOAD_FAST                0 (self)
+             88 LOAD_METHOD              9 (log_user_activity)
+             90 LOAD_FAST                2 (user)
+             92 LOAD_ATTR               10 (id)
+             94 LOAD_CONST               3 (200)
+             96 LOAD_GLOBAL             11 (get_forwarded_for)
+             98 CALL_FUNCTION            0
+            100 LOAD_GLOBAL             12 (request)
+            102 CALL_METHOD              4
+            104 POP_TOP
+            106 LOAD_CONST               0 (None)
+            108 RETURN_VALUE
+
+480     >>  110 LOAD_GLOBAL             13 (Exception)
+            112 LOAD_CONST               4 ("Attempt to record successful auth for non-existent user '%s'!!")
+            114 LOAD_FAST                2 (user)
+            116 BINARY_MODULO
+            118 CALL_FUNCTION            1
+            120 RAISE_VARARGS            1
+
+Disassembly of <code object set_user_last_login at 0x7f360e212550, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 482>:
+483           0 LOAD_GLOBAL              0 (get_utcnow_with_tzinfo)
+              2 CALL_FUNCTION            0
+              4 LOAD_FAST                1 (user)
+              6 STORE_ATTR               1 (last_login)
+
+484           8 LOAD_FAST                0 (self)
+             10 LOAD_ATTR                2 (_users_dao)
+             12 LOAD_METHOD              3 (update_user)
+             14 LOAD_FAST                1 (user)
+             16 CALL_METHOD              1
+             18 POP_TOP
+             20 LOAD_CONST               0 (None)
+             22 RETURN_VALUE
+
+Disassembly of <code object _log_and_abort at 0x7f360e212760, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 486>:
+487           0 LOAD_FAST                0 (self)
+              2 LOAD_METHOD              0 (log_user_activity)
+              4 LOAD_FAST                1 (user_id)
+              6 LOAD_FAST                2 (status)
+              8 LOAD_FAST                3 (ip_address)
+             10 LOAD_FAST                4 (req)
+             12 CALL_METHOD              4
+             14 POP_TOP
+
+488          16 LOAD_GLOBAL              1 (flask)
+             18 LOAD_METHOD              2 (abort)
+             20 LOAD_FAST                2 (status)
+             22 CALL_METHOD              1
+             24 POP_TOP
+             26 LOAD_CONST               0 (None)
+             28 RETURN_VALUE
+
+Disassembly of <code object _scrub_data at 0x7f360e212a20, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 490>:
+492           0 LOAD_CONST               1 (('password', 'confirmPassword', 'smtp_password', 'auth_token', 'icon', 'icon_small', 'private_key', 'salt', 'dkey'))
+              2 STORE_FAST               1 (do_not_log)
+
+504           4 LOAD_CONST               0 (None)
+              6 STORE_FAST               2 (scrubbed)
+
+506           8 LOAD_FAST                0 (req)
+             10 LOAD_ATTR                0 (data)
+             12 LOAD_CONST               2 (b'')
+             14 COMPARE_OP               3 (!=)
+             16 POP_JUMP_IF_FALSE       67 (to 134)
+
+507          18 SETUP_FINALLY           40 (to 100)
+
+508          20 LOAD_GLOBAL              1 (json)
+             22 LOAD_METHOD              2 (loads)
+             24 LOAD_FAST                0 (req)
+             26 LOAD_ATTR                0 (data)
+             28 LOAD_METHOD              3 (decode)
+             30 CALL_METHOD              0
+             32 CALL_METHOD              1
+             34 STORE_FAST               3 (d)
+
+509          36 LOAD_FAST                3 (d)
+             38 POP_JUMP_IF_FALSE       42 (to 84)
+
+510          40 LOAD_FAST                1 (do_not_log)
+             42 GET_ITER
+        >>   44 FOR_ITER                11 (to 68)
+             46 STORE_FAST               4 (bad_thing)
+
+511          48 LOAD_FAST                4 (bad_thing)
+             50 LOAD_FAST                3 (d)
+             52 CONTAINS_OP              0
+             54 POP_JUMP_IF_FALSE       33 (to 66)
+
+512          56 LOAD_FAST                3 (d)
+             58 LOAD_METHOD              4 (pop)
+             60 LOAD_FAST                4 (bad_thing)
+             62 CALL_METHOD              1
+             64 POP_TOP
+        >>   66 JUMP_ABSOLUTE           22 (to 44)
+
+513     >>   68 LOAD_GLOBAL              1 (json)
+             70 LOAD_METHOD              5 (dumps)
+             72 LOAD_FAST                3 (d)
+             74 CALL_METHOD              1
+             76 STORE_FAST               2 (scrubbed)
+             78 POP_BLOCK
+
+519          80 LOAD_FAST                2 (scrubbed)
+             82 RETURN_VALUE
+
+515     >>   84 LOAD_GLOBAL              6 (_logger)
+             86 LOAD_METHOD              7 (debug)
+             88 LOAD_CONST               3 ('API request body is empty, nothing to scrub')
+             90 CALL_METHOD              1
+             92 POP_TOP
+             94 POP_BLOCK
+
+519          96 LOAD_FAST                2 (scrubbed)
+             98 RETURN_VALUE
+
+516     >>  100 DUP_TOP
+            102 LOAD_GLOBAL              8 (JSONDecodeError)
+            104 LOAD_GLOBAL              9 (TypeError)
+            106 BUILD_TUPLE              2
+            108 JUMP_IF_NOT_EXC_MATCH    66 (to 132)
+            110 POP_TOP
+            112 POP_TOP
+            114 POP_TOP
+
+517         116 LOAD_GLOBAL              6 (_logger)
+            118 LOAD_METHOD              7 (debug)
+            120 LOAD_CONST               4 ('Could not decode API request body for scrubbing')
+            122 CALL_METHOD              1
+            124 POP_TOP
+            126 POP_EXCEPT
+
+519         128 LOAD_FAST                2 (scrubbed)
+            130 RETURN_VALUE
+
+516     >>  132 RERAISE                  0
+
+519     >>  134 LOAD_FAST                2 (scrubbed)
+            136 RETURN_VALUE
+
+Disassembly of <code object log_user_activity at 0x7f360e212810, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 521>:
+534           0 LOAD_GLOBAL              0 (get_utcnow_with_tzinfo)
+              2 CALL_FUNCTION            0
+              4 STORE_FAST               5 (dt)
+
+535           6 LOAD_CONST               1 (('/api/auth', '/api/logout', '/api/saml/auth', '/api/saml/assertion', '/api/saml/splogout', '/api/saml/logout', '/api/ldap/auth'))
+              8 STORE_FAST               6 (auth_routes)
+
+537          10 LOAD_CONST               2 (('/api/v1/settings/global/query', '/api/v1/settings/global/advanced'))
+             12 STORE_FAST               7 (route_exceptions)
+
+539          14 LOAD_GLOBAL              1 (UserActivity)
+             16 LOAD_FAST                1 (user_id)
+             18 LOAD_FAST                2 (status)
+             20 LOAD_FAST                3 (ip_address)
+
+540          22 LOAD_FAST                5 (dt)
+             24 LOAD_FAST                4 (req)
+             26 LOAD_ATTR                2 (method)
+             28 LOAD_FAST                4 (req)
+             30 LOAD_ATTR                3 (path)
+
+539          32 LOAD_CONST               3 (('user_id', 'http_status', 'ip_address', 'timestamp', 'request_method', 'request_path'))
+             34 CALL_FUNCTION_KW         6
+             36 STORE_FAST               8 (activity)
+
+542          38 LOAD_FAST                4 (req)
+             40 LOAD_ATTR                3 (path)
+             42 LOAD_FAST                6 (auth_routes)
+             44 CONTAINS_OP              0
+             46 POP_JUMP_IF_FALSE       33 (to 66)
+
+543          48 LOAD_GLOBAL              4 (_logger)
+             50 LOAD_METHOD              5 (warning)
+             52 LOAD_CONST               4 ('User Authentication Activity: User Id=%s, Status=%s, Ip Address=%s, Timestamp=%s')
+
+544          54 LOAD_FAST                1 (user_id)
+             56 LOAD_FAST                2 (status)
+             58 LOAD_FAST                3 (ip_address)
+             60 LOAD_FAST                5 (dt)
+
+543          62 CALL_METHOD              5
+             64 POP_TOP
+
+546     >>   66 LOAD_FAST                0 (self)
+             68 LOAD_ATTR                6 (_config)
+             70 LOAD_ATTR                7 (EnableExtendedApiAuditLogging)
+             72 POP_JUMP_IF_TRUE        47 (to 94)
+             74 LOAD_FAST                4 (req)
+             76 LOAD_ATTR                3 (path)
+             78 LOAD_FAST                6 (auth_routes)
+             80 CONTAINS_OP              0
+             82 POP_JUMP_IF_TRUE        47 (to 94)
+             84 LOAD_FAST                4 (req)
+             86 LOAD_ATTR                3 (path)
+             88 LOAD_FAST                7 (route_exceptions)
+             90 CONTAINS_OP              0
+             92 POP_JUMP_IF_FALSE      120 (to 240)
+
+548     >>   94 SETUP_FINALLY           20 (to 136)
+
+549          96 LOAD_FAST                0 (self)
+             98 LOAD_ATTR                8 (_authorization_service)
+            100 LOAD_METHOD              9 (get_current_request_user)
+            102 CALL_METHOD              0
+            104 STORE_FAST               9 (request_user)
+
+550         106 LOAD_FAST                9 (request_user)
+            108 LOAD_ATTR               10 (username)
+            110 STORE_FAST              10 (username)
+
+551         112 LOAD_FAST                1 (user_id)
+            114 LOAD_CONST               5 (None)
+            116 IS_OP                    0
+            118 POP_JUMP_IF_FALSE       66 (to 132)
+
+552         120 LOAD_FAST                9 (request_user)
+            122 LOAD_ATTR               11 (id)
+            124 DUP_TOP
+            126 LOAD_FAST                8 (activity)
+            128 STORE_ATTR              12 (user_id)
+            130 STORE_FAST               1 (user_id)
+        >>  132 POP_BLOCK
+            134 JUMP_FORWARD            11 (to 158)
+
+553     >>  136 DUP_TOP
+            138 LOAD_GLOBAL             13 (Exception)
+            140 JUMP_IF_NOT_EXC_MATCH    78 (to 156)
+            142 POP_TOP
+            144 POP_TOP
+            146 POP_TOP
+
+554         148 LOAD_CONST               5 (None)
+            150 STORE_FAST              10 (username)
+            152 POP_EXCEPT
+            154 JUMP_FORWARD             1 (to 158)
+
+553     >>  156 RERAISE                  0
+
+555     >>  158 LOAD_FAST                0 (self)
+            160 LOAD_METHOD             14 (_scrub_data)
+            162 LOAD_FAST                4 (req)
+            164 CALL_METHOD              1
+            166 STORE_FAST              11 (request_data)
+
+557         168 LOAD_FAST                0 (self)
+            170 LOAD_ATTR               15 (_useractivity_audit_logger)
+            172 LOAD_METHOD             16 (info)
+
+558         174 LOAD_GLOBAL             17 (UserActivityAuditMessage)
+            176 LOAD_FAST               10 (username)
+            178 LOAD_FAST                1 (user_id)
+            180 LOAD_FAST                3 (ip_address)
+            182 LOAD_FAST                2 (status)
+            184 LOAD_FAST                4 (req)
+            186 LOAD_ATTR                2 (method)
+            188 LOAD_FAST                4 (req)
+            190 LOAD_ATTR                3 (path)
+
+559         192 LOAD_FAST               11 (request_data)
+
+558         194 LOAD_CONST               6 (('content',))
+            196 CALL_FUNCTION_KW         7
+
+557         198 CALL_METHOD              1
+            200 POP_TOP
+
+562         202 LOAD_FAST                0 (self)
+            204 LOAD_ATTR                6 (_config)
+            206 JUMP_IF_FALSE_OR_POP   107 (to 214)
+            208 LOAD_FAST                0 (self)
+            210 LOAD_ATTR                6 (_config)
+            212 LOAD_ATTR               18 (CBIO)
+        >>  214 STORE_FAST              12 (is_cloud)
+
+563         216 LOAD_FAST               12 (is_cloud)
+            218 POP_JUMP_IF_FALSE      114 (to 228)
+            220 LOAD_FAST                1 (user_id)
+            222 LOAD_CONST               7 (1)
+            224 COMPARE_OP               3 (!=)
+            226 POP_JUMP_IF_FALSE      120 (to 240)
+
+565     >>  228 LOAD_FAST                0 (self)
+            230 LOAD_ATTR               19 (_users_dao)
+            232 LOAD_METHOD             20 (add_user_activity)
+            234 LOAD_FAST                8 (activity)
+            236 CALL_METHOD              1
+            238 POP_TOP
+
+567     >>  240 LOAD_FAST                8 (activity)
+            242 RETURN_VALUE
+
+Disassembly of <code object handle_add_user at 0x7f360e212d90, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 569>:
+570           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (pbkdf2_authenticator)
+              4 LOAD_METHOD              1 (handle_add_user)
+              6 LOAD_FAST                1 (user)
+              8 LOAD_FAST                2 (password)
+             10 CALL_METHOD              2
+             12 POP_TOP
+
+571          14 LOAD_FAST                0 (self)
+             16 LOAD_ATTR                2 (digest_authenticator)
+             18 LOAD_METHOD              1 (handle_add_user)
+             20 LOAD_FAST                1 (user)
+             22 LOAD_FAST                2 (password)
+             24 CALL_METHOD              2
+             26 POP_TOP
+             28 LOAD_CONST               0 (None)
+             30 RETURN_VALUE
+
+Disassembly of <code object handle_update_user at 0x7f360e212970, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 573>:
+574           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (pbkdf2_authenticator)
+              4 LOAD_METHOD              1 (handle_update_user)
+              6 LOAD_FAST                1 (user)
+              8 LOAD_FAST                2 (password)
+             10 CALL_METHOD              2
+             12 POP_TOP
+
+575          14 LOAD_FAST                0 (self)
+             16 LOAD_ATTR                2 (digest_authenticator)
+             18 LOAD_METHOD              1 (handle_update_user)
+             20 LOAD_FAST                1 (user)
+             22 LOAD_FAST                2 (password)
+             24 CALL_METHOD              2
+             26 POP_TOP
+             28 LOAD_CONST               0 (None)
+             30 RETURN_VALUE
+
+Disassembly of <code object handle_del_user at 0x7f360e212ce0, file "/usr/share/cb/virtualenv/lib/python3.10/site-packages/cb/auth/authn_service.py", line 577>:
+578           0 LOAD_FAST                0 (self)
+              2 LOAD_ATTR                0 (pbkdf2_authenticator)
+              4 LOAD_METHOD              1 (handle_del_user)
+              6 LOAD_FAST                1 (user)
+              8 CALL_METHOD              1
+             10 POP_TOP
+
+579          12 LOAD_FAST                0 (self)
+             14 LOAD_ATTR                2 (digest_authenticator)
+             16 LOAD_METHOD              1 (handle_del_user)
+             18 LOAD_FAST                1 (user)
+             20 CALL_METHOD              1
+             22 POP_TOP
+             24 LOAD_CONST               0 (None)
+             26 RETURN_VALUE
+
+
+----------------------------[END]-------------------------------
+
+
